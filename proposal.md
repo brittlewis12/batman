@@ -47,4 +47,26 @@ As a user, I want to see how many times a project has been viewed.
 ##technology
 ===
 
+###audio
 
+* **html5 web audio api** (recording, basic playback)
+
+* **sound manager 2** (js lib -- advanced playback)
+
+* soundcloud api (sharing final product / tracks)
+
+###administrative
+
+* omniauth (ruby gem -- facebook login)
+
+* figaro (ruby gem -- api key management)
+
+###dev env
+
+* **pry-rails / better_errors** (ruby gems -- debugging)
+
+###infrastructure
+
+* **heroku** (server hosting)
+
+* aws s3 (storing static assets, ie tracks & songs)
