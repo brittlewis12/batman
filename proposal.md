@@ -55,6 +55,8 @@ As a user, I want to see how many times a project has been viewed.
 
 * soundcloud api (sharing final product / tracks)
 
+* soundjs (js lib -- abstracts web audio api, may be useful if the default interface proves to be unweildy)
+
 ###administrative
 
 * omniauth (ruby gem -- facebook login)
