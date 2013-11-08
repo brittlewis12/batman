@@ -50,18 +50,25 @@ As a user, I want to see how many times a project has been viewed.
 ###audio
 
 * **html5 web audio api** (recording, basic playback)
+  * [Web Audio API spec](https://dvcs.w3.org/hg/audio/raw-file/tip/webaudio/specification.html)
+  * [html5rocks webaudio intro tutorial](http://www.html5rocks.com/en/tutorials/webaudio/intro/)
 
 * **sound manager 2** (js lib -- advanced playback)
+  * [SoundManager 2](http://www.schillmania.com/projects/soundmanager2/)
 
 * soundcloud api (sharing final product / tracks)
+  * [SoundCloud API](http://developers.soundcloud.com/docs/api/guide)
 
 * soundjs (js lib -- abstracts web audio api, may be useful if the default interface proves to be unweildy)
+  * [SoundJS](http://www.createjs.com/#!/SoundJS)
 
 ###administrative
 
 * omniauth (ruby gem -- facebook login)
+  * [omniauth on github](https://github.com/intridea/omniauth)
 
 * figaro (ruby gem -- api key management)
+  * [figaro on github](https://github.com/laserlemon/figaro)
 
 ###dev env
 
@@ -70,5 +77,8 @@ As a user, I want to see how many times a project has been viewed.
 ###infrastructure
 
 * **heroku** (server hosting)
+  * [heroku dev center](https://devcenter.heroku.com/)
 
 * aws s3 (storing static assets, ie tracks & songs)
+  * [s3 documentation](http://docs.aws.amazon.com/AmazonS3/latest/dev/Welcome.html)
+  * [integrating heroku & s3](https://devcenter.heroku.com/articles/s3)
