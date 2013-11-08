@@ -6,14 +6,14 @@ PROPOSAL
 The project is a browser based song collaboration tool. Users can sign up and record tracks within the browser and add them to a song project. 
 
 ##roles
-===
+====
 *	**Project Manager:** Britt
 *	**Quality Assurance:** Mihran 
 *	**Front End Lead:** Tea
 *	**Mascot:** Remy the Dog
 
 ##user stories
-===
+====
 As a user....I want to sign up to beatcove so I have my own personal account.
 
 As a user....I want to log in with a password so that I alone can build on my work and use the app under my own account.
@@ -45,7 +45,7 @@ As a user....I want to be able to share a link to our song project (with limitat
 As a user....I want to see how many times a project has been viewed.
 
 ##technology
-===
+====
 
 ###audio
 
