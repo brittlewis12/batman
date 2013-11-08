@@ -49,7 +49,7 @@ As a user....I want to see how many times a project has been viewed.
 
 ###audio
 
-* **html5 web audio api** (recording, basic playback)
+* **html5 web audio api** (basic playback)
   * [Web Audio API spec](https://dvcs.w3.org/hg/audio/raw-file/tip/webaudio/specification.html)
   * [html5rocks webaudio intro tutorial](http://www.html5rocks.com/en/tutorials/webaudio/intro/)
 
@@ -59,8 +59,11 @@ As a user....I want to see how many times a project has been viewed.
 * soundcloud api (sharing final product / tracks)
   * [SoundCloud API](http://developers.soundcloud.com/docs/api/guide)
 
-* soundjs (js lib -- abstracts web audio api, may be useful if the default interface proves to be unweildy)
+* sound.js (js lib -- abstracts web audio api, may be useful if the default interface proves to be unweildy)
   * [SoundJS](http://www.createjs.com/#!/SoundJS)
+
+* recorder.js (js lib -- returns raw wav file with customization options for file specs)
+  * [Recorderjs](https://github.com/mattdiamond/Recorderjs)
 
 ###administrative
 
