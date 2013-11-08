@@ -32,11 +32,11 @@ As a user....I want to record tracks within a song project using the app so that
 
 As a user....I want unique responsibilities and capabilities if I created a song project so that I can delete tracks and invite collaborators. 
 
-As a user....I want to playback discrete tracks so I can listen to individual track quality.
+As a user....I want to playback a specific track so I can listen to its quality.
 
 As a user....I want to playback all tracks simultaneously so I can listen to how they sound together.
 
-As a user....I want to select specific tracks for playback.
+As a user....I want to select specific tracks for playback simultaneously so I can hear multiple parts (but not necessarily all parts) together.
 
 As a user....I want to be able to record along with a track I'm currently listening to.
 
