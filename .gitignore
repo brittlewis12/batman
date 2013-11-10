@@ -17,3 +17,7 @@
 
 # Ignore config/database.yml
 /config/database.yml
+
+
+
+.gitignore /config/database.yml
