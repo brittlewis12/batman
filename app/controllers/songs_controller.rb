@@ -6,6 +6,6 @@ class SongsController < ApplicationController
   def new
   end
 
-  def 
+  def
   end
 end
