@@ -2,7 +2,7 @@ var context;
 var bufferLoader;
 
 // buffer Loader Class 
-  function BufferLoader(context, urlList, callback) {
+function BufferLoader(context, urlList, callback) {
   this.context = context;
   this.urlList = urlList;
   this.onload = callback;
@@ -59,6 +59,10 @@ $(function(){
   });
 })
 
+var selectTracks = [
+      'https://dl.dropboxusercontent.com/s/yk6lk7veq0xroa7/05-ho-hey.mp3?dl=1&token_hash=AAG1FslNPq956S9dr3peWLn1w7YFmQ6vK90e092M-DumAA',
+      'https://dl.dropboxusercontent.com/s/jqijit6n4byl57v/Miley_Cyrus-Wrecking_Ball_rington.mp3?dl=1&token_hash=AAG3luOoVZO-v0BMjblCh8huimvOGsq7B0u0vjAiNmvLYg',
+    ];
 
 function initLoader() {
   // Fix up prefixing
@@ -67,15 +71,11 @@ function initLoader() {
 
   bufferLoader = new BufferLoader(
     context,
-    [
-      'https://dl.dropboxusercontent.com/s/yk6lk7veq0xroa7/05-ho-hey.mp3?dl=1&token_hash=AAG1FslNPq956S9dr3peWLn1w7YFmQ6vK90e092M-DumAA',
-      'https://dl.dropboxusercontent.com/s/jqijit6n4byl57v/Miley_Cyrus-Wrecking_Ball_rington.mp3?dl=1&token_hash=AAG3luOoVZO-v0BMjblCh8huimvOGsq7B0u0vjAiNmvLYg',
-    ],
+    selectTracks,
     finishedLoading
     );
 
   bufferLoader.load();
-  console.log("HEI");
 }
 
 function finishedLoading(bufferList) {
