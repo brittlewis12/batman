@@ -1,5 +1,12 @@
 class SongsController < ApplicationController
+
   def index
-    render :index
   end
+
+  def new
+  end
+
+  def
+  end
+
 end
