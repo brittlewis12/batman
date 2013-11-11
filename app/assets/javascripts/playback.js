@@ -80,13 +80,12 @@ function initLoader() {
 
 function finishedLoading(bufferList) {
   // Create two sources and play them both together.
-  var source1 = context.createBufferSource();
-  var source2 = context.createBufferSource();
-  source1.buffer = bufferList[0];
-  source2.buffer = bufferList[1];
+  var source = [];
+  for (var i = 0; i < bufferList.length; i ++){
+    source[i] = context.createBufferSource();
+    source[i].buffer = bufferList[i];
 
-  source1.connect(context.destination);
-  source2.connect(context.destination);
-  source1.start(0);
-  source2.start(0);
+    source[i].connect(context.destination);
+    source[i].start(i);
+  };
 }
