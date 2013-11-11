@@ -1,3 +1,5 @@
 <h1> edit page for <%= @user.username %> </h1>
 
 <%= render 'new' %>
+
+<%= link_to "delete user", user_path(@user), method: :delete %>

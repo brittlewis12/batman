@@ -21,20 +21,20 @@ class UsersController < ApplicationController
   end
 
   def update
-  
-  end
-
-
-  def destroy
-
+    if @user.update(user_params)
+      redirect_to user_path(@user)
+    else
+      render :edit
+    end
   end
 
   def show
     render :show
   end
 
-
-
+  def destroy 
+    @user.destroy   
+  end
 
  private
 
