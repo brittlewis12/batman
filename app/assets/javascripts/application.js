@@ -14,3 +14,7 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+//= require main.js
+//= require monkeyPatch.js
+//= require recorder.js
+//= require recorderWorker.js
