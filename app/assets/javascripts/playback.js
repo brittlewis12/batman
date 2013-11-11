@@ -2,7 +2,9 @@ var context;
 var bufferLoader;
 
 $(function(){
-  $('button').on('click', init);
+  $('button').on('click', function(){
+    init();
+  });
 })
 
 
@@ -21,6 +23,7 @@ function init() {
     );
 
   bufferLoader.load();
+  console.log("HEI");
 }
 
 function finishedLoading(bufferList) {
