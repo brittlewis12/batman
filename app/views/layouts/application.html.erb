@@ -7,16 +7,17 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <div id="viz">
-    <canvas id="analyser" width="1024" height="500"></canvas>
-    <canvas id="wavedisplay" width="1024" height="500"></canvas>
-  </div>
-  <div id="controls">
-    <label>Record:</label>
-    <img id="record" src="http://placekitten.com/300/300" onclick="toggleRecording(this);">
-    <label>Save</label>
-    <img id="save" src="http://placekitten.com/300/300" onclick="saveAudio();">
-  </div>
+  <!--   <div id="viz">
+      <canvas id="analyser" width="1024" height="500"></canvas>
+      <canvas id="wavedisplay" width="1024" height="500"></canvas>
+    </div>
+    <div id="controls">
+      <label>Record:</label>
+      <img id="record" src="http://placekitten.com/300/300" onclick="toggleRecording(this);">
+      <label>Save</label>
+      <img id="save" src="http://placekitten.com/300/300" onclick="saveAudio();">
+    </div> -->
+  
 <%= yield %>
 
 </body>
