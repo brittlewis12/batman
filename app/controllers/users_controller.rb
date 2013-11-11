@@ -32,8 +32,8 @@ class UsersController < ApplicationController
     render :show
   end
 
-  def destroy 
-    @user.destroy   
+  def destroy
+    @user.destroy
   end
 
  private
