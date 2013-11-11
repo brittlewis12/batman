@@ -87,6 +87,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
     var url = (window.URL || window.webkitURL).createObjectURL(blob);
     var link = window.document.createElement('a');
     link.href = url;
+    // .download is a javascript method/ link attribute that forces users to download. We will make a post function here instead
     link.download = filename || 'output.wav';
     var click = document.createEvent("Event");
     click.initEvent("click", true, true);
