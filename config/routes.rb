@@ -7,6 +7,7 @@ Beatcove::Application.routes.draw do
   resources :users, except: [:index]
 
   resources :songs, except: [:index] do
+    resources :collaborators, only: [:new, :create]
     resources :tracks, only: [:create, :destroy, :update, :show]
   end
 
