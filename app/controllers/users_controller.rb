@@ -14,7 +14,7 @@ class UsersController < ApplicationController
       session[:user_id] = @user.id # FIXME make this more secure, force login at creation
       redirect_to user_path(@user)
     else
-      redirect_to adsfasfds # FIXME
+      redirect_to #adsfasfds # FIXME
     end
   end
 
