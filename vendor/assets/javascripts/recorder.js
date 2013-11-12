@@ -84,8 +84,18 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
   };
 
   Recorder.passToUploader = function(blob, filename){
-    // create file with name: filename & data: blob
-    // return file, to be posted to S3.
+    AWS.config.update({accessKeyId: "AKIAIWQL5BA6V37OGUQQ", secretAccessKey: "***REMOVED***"})
+    AWS.config.region = "us-west-2";
+    var s3beatcove = new AWS.S3({ params: {Bucket: 'beatcove'} });
+    var req = s3beatcove.listObjects();
+    var params = {Key: filename, ContentType: blob.type, Body: blob};
+    s3beatcove.putObject(params, function(error, data){
+      if (error){
+        console.log(":(");
+      } else {
+        console.log(data);
+      } 
+    });
   }
 
   Recorder.forceDownload = function(blob, filename){
