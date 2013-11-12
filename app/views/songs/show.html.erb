@@ -1,0 +1,9 @@
+<h1> <%= @song.name %> </h1>
+
+<% @song.tracks.each do |track| %>
+
+  <h5> <b> <%= track.name %> </b></h5>
+  <em> <%= track.desc %>  <%= track.url %> </em>
+
+<% end %>
+
