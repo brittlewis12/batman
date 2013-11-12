@@ -3,7 +3,7 @@ body {
   background-color: black;
   color: #141414;
   background-size: cover 700px;
-  background-image: url('soundboard.png');
+  background-image: url('/assets/soundboard.png');
   background-repeat: no-repeat;
   overflow: hidden;
 
