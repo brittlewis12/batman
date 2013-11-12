@@ -11,7 +11,7 @@
  *= require_self
  *= require_tree .
  */
-html { 
+/*html { 
   overflow: hidden; 
 }
 body { 
@@ -56,4 +56,4 @@ canvas {
   body { flex-direction: row;}
   #controls { flex-direction: column; height: 100%; width: 10%;}
   #viz { height: 100%; width: 90%;}
-}
+}*/

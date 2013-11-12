@@ -1,3 +1,13 @@
-<h1> <%= @user.username %> </h1>
+<h1>user: <%= @user.username %> </h1>
 
+<em> songs: </em> 
+<br>
+<% @user.songs.each do |song| %>
+  <%= song.id %>:  <%=link_to song.name, song_path(song) %> 
+<% end %>
+
+<br> 
 <%= link_to "edit user", edit_user_path(@user) %>
+
+
+<%= link_to "sign out", new_session_path %>
