@@ -57,6 +57,11 @@ $(function(){
   $('button').on('click', function(){
     initLoader();
   });
+  $('#play').on('click', function(){
+    initLoader();
+  });
+
+
 })
 
 var selectTracks = [
