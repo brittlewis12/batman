@@ -1,0 +1,272 @@
+body {
+  width: 100%;
+  background-color: black;
+  color: #141414;
+  background-size: cover 700px;
+  background-image: url('soundboard.png');
+  background-repeat: no-repeat;
+  overflow: hidden;
+
+}
+
+.nav-bar {
+  min-width: 480px;
+  margin-left:0;
+  padding: 0;
+  top: 0;
+  width:100%;
+  height: 4em;
+  position: absolute;
+  right: 0;
+  left: 0;
+  z-index: 100;
+    
+}
+
+
+.wrapper {
+  width: 100%;
+  text-align: center;
+
+}
+
+/*TEXT */
+
+header {
+  margin-top: 1em;
+}
+
+header h1 {
+  margin-top: 1em;
+  margin-left: 3em;
+}
+.right {
+  margin-left: 3em;
+}
+
+
+nav {
+  float: right;
+  margin-top: -1.5em;
+  margin-bottom: 3em;
+  margin-right: 10%;
+
+}
+
+li {
+  display: inline;
+  color: white;
+  font-family: 'Wire One', sans-serif;
+  margin-left: 1em;
+  letter-spacing: .1em;
+}
+
+h1 {
+  font-size: 2em;
+  font-family: 'Josefin Sans', sans-serif;
+  color: white;
+}
+
+h2 {
+  font-size: 2em;
+}
+
+header h3 {
+  font-size: 2em;
+  text-transform: uppercase;
+  font-family: 'Josefin Sans', sans-serif; 
+  color:  #E8E8E8;
+}
+
+h4 {
+  margin: .5em auto 0 2em;
+}
+
+.username {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 1em;
+  color: white;
+}
+/*
+DIV LAYOUT*/
+
+.song-home {
+  margin: 0 auto;
+  width: 100%;
+  min-height: 1000px;
+  padding-bottom: 1em;
+  background-color: rgba(0, 0, 0, .5);
+  overflow: scroll;
+}
+
+.recorder {
+  padding: 1em 0 2em;
+  margin-left: 0;
+  margin: 4em 0 0;
+  width: 100%;
+  height: 200px;
+  text-align: center;
+  background-color: rgba(255, 255, 255, .3);
+  text-align: center;
+}
+
+.user {
+  padding: .3em 0 2em;
+  margin: 4em auto 0;
+  width: 100%;
+  height: 200px;
+  text-align: left;
+  background-color: #1C1C1C;
+}
+
+.track {
+  margin: 1em auto 0;
+  width: 90%;
+  min-width: 600px; 
+  height: 90px; 
+  text-align: left;
+  padding-bottom: 1em;
+}
+
+.center {
+  margin: 0 auto;
+  text-align: center;
+  width: 600px;
+  height: 1%;
+}
+
+::-webkit-scrollbar { 
+    display: none; 
+}
+
+/*user image */
+img.avatar {
+  margin: .3em 0 0 2em;
+  float: left;
+  clear: both;
+  border-radius: 0 2em 0 2em;
+}
+
+/*BUTTONS*/
+
+.record-button {
+  margin: 2em 2em;
+  display: inline-block;
+  height: 100px;
+  width: 100px;
+  border-radius: 50px;
+  background-color: #470800;
+  -webkit-animation-name: redPulse;
+  -webkit-animation-duration: 2s;
+  -webkit-animation-iteration-count: infinite;
+  -moz-animation-name: redPulse;
+  -moz-animation-duration: 2s;
+  -moz-animation-iteration-count: infinite;
+
+
+}
+
+.play-button {
+  margin: 2em 2em;
+  display: inline-block;
+  width: 0; 
+  height: 0; 
+  border-top: 50px solid transparent;
+  border-bottom: 50px solid transparent;
+  border-left: 50px solid purple;
+  -webkit-animation: glow 1s ease-in-out infinite alternate;
+  -moz-animation: glow 1s ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes glow {
+  0% { 
+    border-left: 50px solid #260E34;
+  }
+  100% { 
+    border-left: 50px solid #5C246E;
+  }
+}
+
+@-moz-keyframes glow {
+  0% { 
+    border-left: 50px solid #260E34;
+  }
+  100% { 
+    border-left: 50px solid #360A57;
+  }
+}
+
+@-moz-keyframes purplePulse {
+  from { background-color: #5D1885;   -moz-box-shadow: 0 0 9px #1C1C1C; }
+  50% { background-color: #853EAD;  -moz-box-shadow: 0 0 18px #853EAD; }
+  to { background-color: #5D1885;  -moz-box-shadow: 0 0 9px #1C1C1C;}
+}
+
+@-webkit-keyframes redPulse {
+  from { background-color: #470800;  }
+  50% { background-color: #A30000;}
+  to { background-color: #470800;}
+}
+
+@-moz-keyframes redPulse {
+  from { background-color: #470800; -moz-box-shadow: 0 0 9px #1C1C1C; }
+  50% { background-color: #730F02; -moz-box-shadow: 0 0 20px #730F02; }
+  to { background-color: #470800; -moz-box-shadow: 0 0 9px #1C1C1C; }
+}
+/*
+PLAYBACK*/
+
+.progress {
+  float: left;
+  margin: 1em 0 0 5em;
+  width: 80%;   
+  border: 1px solid white;
+  position: relative;
+  padding: 3px;
+  border-radius: 5px;
+}
+
+.percent {
+ position: absolute;   
+ left: 50%;
+}
+
+.bar {
+ margin: 6px;
+ height: 8px;
+ background-color: #CFCFCF;
+ border-radius: 1px 0 0 1px;
+}
+
+.track button {
+  position: absolute;
+  margin-top: 2em;
+  margin-left: 2em;
+}
+
+
+input[type="checkbox"] + label span {
+    display:inline-block;
+    width:19px;
+    height:19px;
+    margin:-1px 4px 0 0;
+    vertical-align:middle;
+    background:url(check_radio_sheet.png) left top no-repeat;
+    cursor:pointer;
+}
+input[type="checkbox"]:checked + label span {
+    background:url(check_radio_sheet.png) -19px top no-repeat;
+}
+
+form {
+    display: block;
+    font-size:11px;
+    width:150px;
+    margin: 2em auto 0;
+}
+input {
+  margin: 1em auto;
+  border-radius: 5px;
+  border: none;
+  height: 2em;
+}
