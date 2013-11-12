@@ -22,8 +22,18 @@ function saveAudio() {
     // audioRecorder.exportMonoWAV( doneEncoding );
 }
 
+// function playAudio() {
+//     audioRecorder.exportWAV( doneRecording );
+// }
+
+// function doneRecording ( blob ) {
+//     Recorder.createBlobObject( blob );
+//     var track = $("audio");
+//     //track.src.start(); //some stuff that plays the unsaved audio blob in an audio tag
+// }
+
 function doneEncoding( blob ) {
-    Recorder.passToUploader( blob, "myRecording" + ((recIndex<10)?"0":"") + recIndex + ".wav" );
+    Recorder.passToUploader( blob, $(".song-name").html + (currentSongNameTracks.length + 1) + currentUser );
     recIndex++;
 }
 

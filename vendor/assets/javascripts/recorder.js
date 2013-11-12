@@ -92,18 +92,24 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
     var params = {Key: filename, ContentType: blob.type, Body: blob};
     s3beatcove.putObject(params, function(error, data){
       if (error){
-        console.log(":(");
+        alert("Something went wrong, and we weren't able to save your track. Please try again.");
       } else {
-        console.log(data);
+        window.location.replace("/songs/1");
       } 
     });
+  }
+
+  Recorder.createBlobObject = function(blob){
+    var url = (window.URL || window.webkitURL).createObjectURL(blob);
+    window.track = new Audio();
+    window.track.src = url;
+    document.body.appendChild(track);
   }
 
   Recorder.forceDownload = function(blob, filename){
     var url = (window.URL || window.webkitURL).createObjectURL(blob);
     var link = window.document.createElement('a');
     link.href = url;
-    // .download is a javascript method/ link attribute that forces users to download. We will make a post function here instead
     link.download = filename || 'output.wav';
     var click = document.createEvent("Event");
     click.initEvent("click", true, true);
