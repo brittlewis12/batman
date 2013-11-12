@@ -1,0 +1,6 @@
+<h1> id: <%= @track.id%> </h1>
+<h1> <%= @track.name %> </h1>
+<br>
+<%= @track.desc %>
+
+<%= link_to "delete track", song_track_path, method: :delete %>
