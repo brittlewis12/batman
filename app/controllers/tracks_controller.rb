@@ -1,6 +1,6 @@
 class TracksController < ApplicationController
 
-before_action :set_track, except: [:create]
+before_action :set_track, except: [:create, :new]
 
   def new
     @uploader = Track.new.track_file

@@ -23,7 +23,7 @@ function saveAudio() {
 }
 
 function doneEncoding( blob ) {
-    Recorder.forceDownload( blob, "myRecording" + ((recIndex<10)?"0":"") + recIndex + ".wav" );
+    Recorder.passToUploader( blob, "myRecording" + ((recIndex<10)?"0":"") + recIndex + ".wav" );
     recIndex++;
 }
 
