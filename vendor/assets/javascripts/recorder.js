@@ -84,8 +84,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
   };
 
   Recorder.passToUploader = function(blob, filename){
-    // create file with name: filename & data: blob
-    // return file, to be posted to S3.
+    window.blob = blob;
   }
 
   Recorder.forceDownload = function(blob, filename){
