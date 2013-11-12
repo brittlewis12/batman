@@ -35,6 +35,15 @@ end
 # Use ActiveModel has_secure_password
 gem 'bcrypt-ruby', '~> 3.0.0'
 
+# Use carrierwave_direct for S3 interaction
+gem 'carrierwave_direct', '~> 0.0.13'
+
+# Use fog for handling AWS implementation on back end
+gem 'fog'
+
+# Optional fog dependency unf for non-ASCII characters. May be unnecessary.
+gem 'unf'
+
 # Use unicorn as the app server
 # gem 'unicorn'
 
