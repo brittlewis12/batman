@@ -1,6 +1,7 @@
 class TracksController < ApplicationController
 
 before_action :set_track, except: [:create]
+before_action :user_can_access_track 
 
   def create
     @track = Track.new(track_params)
@@ -30,4 +31,9 @@ before_action :set_track, except: [:create]
     @track = Track.find(params[:id])
   end
 
+  def user_can_access_track
+
+  end
+
 end
+
