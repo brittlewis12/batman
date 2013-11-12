@@ -10,4 +10,6 @@ class User < ActiveRecord::Base
 
   has_many :songs, through: :tracks
 
+  has_many :created_songs, class_name: 'Song', foreign_key: 'creator_id'
+
 end
