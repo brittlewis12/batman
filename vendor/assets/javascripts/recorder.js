@@ -83,10 +83,26 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
     this.node.connect(this.context.destination);    //this should not be necessary
   };
 
+  Recorder.passToUploader = function(blob, filename){
+    AWS.config.update({accessKeyId: "AKIAIWQL5BA6V37OGUQQ", secretAccessKey: "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"})
+    AWS.config.region = "us-west-2";
+    var s3beatcove = new AWS.S3({ params: {Bucket: 'beatcove'} });
+    var req = s3beatcove.listObjects();
+    var params = {Key: filename, ContentType: blob.type, Body: blob};
+    s3beatcove.putObject(params, function(error, data){
+      if (error){
+        console.log(":(");
+      } else {
+        console.log(data);
+      } 
+    });
+  }
+
   Recorder.forceDownload = function(blob, filename){
     var url = (window.URL || window.webkitURL).createObjectURL(blob);
     var link = window.document.createElement('a');
     link.href = url;
+    // .download is a javascript method/ link attribute that forces users to download. We will make a post function here instead
     link.download = filename || 'output.wav';
     var click = document.createEvent("Event");
     click.initEvent("click", true, true);

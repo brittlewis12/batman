@@ -2,6 +2,11 @@ class TracksController < ApplicationController
 
 before_action :set_track, except: [:create]
 
+  def new
+    @uploader = Track.new.track_file
+    @uploader.success_action_redirect = track_path(@uploader)
+  end
+
   def create
     @track = Track.new(track_params)
     @track.user_id = @current_user.id
