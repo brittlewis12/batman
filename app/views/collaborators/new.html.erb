@@ -1,0 +1,11 @@
+<h1> add a collaborator by entering their username. <h2>
+
+
+<%= form_tag song_collaborators_path(@song), method: :post do %>
+
+    <%= label_tag :username %>
+    <%= text_field_tag :username %>
+
+    <%= submit_tag %>
+
+<% end %>
