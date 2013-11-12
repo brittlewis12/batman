@@ -2,6 +2,8 @@ class SongsController < ApplicationController
 
   before_action :current_user
   before_action :set_song, except: [:new, :create]
+  before_action :authenticated! 
+  before_action :user_can_access_song, except: [:new, :create]
 
   def new
     @song = Song.new
@@ -48,4 +50,10 @@ private
     @song = Song.find(params[:id])
   end
 
+  def user_can_access_song
+    unless @song.users.include?(@current_user)
+      redirect_to user_path(current_user)
+    end    
+  end
+  
 end
