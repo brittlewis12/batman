@@ -9,11 +9,10 @@ before_action :set_track, except: [:create]
   end
 
   def show
-    render :show  
+    render :show
   end
 
   def update
-  
   end
 
   def destroy
