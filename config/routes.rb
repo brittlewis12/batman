@@ -6,8 +6,8 @@ Beatcove::Application.routes.draw do
 
   resources :users, except: [:index]
 
-  resources :songs, except: [:index] do
-    resources :tracks, only: [:new, :create, :destroy, :update, :show]
-  end
+  resources :songs, except: [:index]
+  
+  resources :tracks, only: [:new, :create, :destroy, :update, :show]
 
 end
