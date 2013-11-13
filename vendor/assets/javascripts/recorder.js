@@ -83,17 +83,32 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
     this.node.connect(this.context.destination);    //this should not be necessary
   };
 
-  Recorder.passToUploader = function(blob, filepath){
+  Recorder.passToUploader = function(blob, filepath, songId){
     var blob = blob;
     AWS.config.update({accessKeyId: "AKIAIWQL5BA6V37OGUQQ", secretAccessKey: "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"})
     AWS.config.region = "us-west-2";
     var beatcove = new AWS.S3({ params: {Bucket: 'beatcove'} });
     var params = {ACL: "public-read", Key: filepath, ContentType: blob.type, Body: blob};
     beatcove.putObject(params, function(error, data){
+      // upload to AMAZON
       if (error){
         alert("Something went wrong, and we weren't able to save your track. Please try again.");
       } else {
-        window.location.replace("/songs/1");
+        console.log("about to try to do some ajax trickery!!");
+        // persist in DATABASE
+        $.ajax({
+          url: "/songs/" + songId + "/tracks/",
+          type: "POST",
+          data: {track: {name: filepath, url:"https://beatcove.s3-us-west-2.amazonaws.com/" + filepath}},
+          dataType: "json",
+          error: function(){
+            alert("record was so bad, it could not persist in our DB");
+          },
+          success: function(data){
+            console.log(data);
+            window.location.replace("/songs/"+ songId);
+          }
+        });
       } 
     });
   }
