@@ -1,18 +1,17 @@
-<div id="viz">
-  <canvas id="analyser" width="1024" height="500"></canvas>
-  <canvas id="wavedisplay" width="1024" height="500"></canvas>
+<%= javascript_include_tag :record %>
+
+<div class="song-info">
+  <h3 class="song-name"><%= @song.name %></h3>
+  <h3 class="username"><%= @current_user.username %></h3>
 </div>
+
 <div id="controls">
   <a id="record" href="#" onclick="toggleRecording(this);">
     RECORD
   </a>
-  <!-- <a id="play" href="#" onclick="playAudio();">
-    PLAY
-  </a> -->
   <a id="save" href="#" onclick="saveAudio();">
     SAVE
   </a>
-
 </div>
 
 <!-- JS -->

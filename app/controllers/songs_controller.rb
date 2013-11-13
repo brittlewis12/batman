@@ -3,7 +3,7 @@ class SongsController < ApplicationController
   before_action :current_user
   before_action :set_song, except: [:new, :create]
   before_action :authenticated! 
-  before_action :user_can_access_song, except: [:new, :create]
+  # before_action :user_can_access_song, except: [:new, :create]
 
   def new
     @song = Song.new
