@@ -83,13 +83,12 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
     this.node.connect(this.context.destination);    //this should not be necessary
   };
 
-  Recorder.passToUploader = function(blob, filename){
+  Recorder.passToUploader = function(blob, filepath){
     var blob = blob;
     AWS.config.update({accessKeyId: "AKIAIWQL5BA6V37OGUQQ", secretAccessKey: "***REMOVED***"})
     AWS.config.region = "us-west-2";
     var beatcove = new AWS.S3({ params: {Bucket: 'beatcove'} });
-    var params = {ACL: "public-read", Key: filename, ContentType: blob.type, Body: blob};
-    console.log(params);
+    var params = {ACL: "public-read", Key: filepath, ContentType: blob.type, Body: blob};
     beatcove.putObject(params, function(error, data){
       if (error){
         alert("Something went wrong, and we weren't able to save your track. Please try again.");
