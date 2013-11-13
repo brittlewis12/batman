@@ -31,7 +31,7 @@ function saveAudio() {
 // }
 
 function doneEncoding( blob ) {
-    Recorder.passToUploader( blob, $(".song-name").html() + "/" + $(".song-name").attr("data-user") + ".wav" /*+ (currentSongNameTracks.length + 1) + currentUser */);
+    Recorder.passToUploader( blob, $(".song-name").html() + "/" + $(".song-name").attr("data-user") + ".wav" /*+ (currentSongNameTracks.length + 1) */);
     recIndex++;
 }
 
