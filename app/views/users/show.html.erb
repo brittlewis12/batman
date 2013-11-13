@@ -1,13 +1,22 @@
-<h1>user: <%= @user.username %> </h1>
-
-<em> songs: </em> 
-<br>
-<% @user.songs.each do |song| %>
-  <%= song.id %>:  <%=link_to song.name, song_path(song) %> 
-<% end %>
-
-<br> 
-<%= link_to "edit user", edit_user_path(@user) %>
-
-
-<%= link_to "sign out", new_session_path %>
+<div class="user">
+   <header>
+     <h3 class="right"><%= @user.username %></h3>  
+    <li><%= link_to "edit user", edit_user_path(@user) %></li>
+   </header>
+  </div>
+<div class="song-home">
+  <header>
+    <h3 class="right">projects</h3>
+  </header>
+  <% @user.songs.each do |song| %>
+  <div class="track">
+    <h4><%=link_to song.name, song_path(song) %> </h4>
+    <img class="avatar" src="http://placekitten.com/60/60" alt="">
+    <button> ▶ </button>
+    <div class="progress">
+      <span class="percent"></span>
+      <div class="bar" style= "width: 30%;"></div>
+    </div>
+  </div>
+  <% end %>
+ </div>
