@@ -1,14 +1,14 @@
 <div class="user">
    <header>
      <h3 class="right"><%= @user.username %></h3>
-    <li class="left"><%= link_to "edit user", edit_user_path(@user) %></li>
+    <li class="left"><%= (link_to "edit user", edit_user_path(@user)) if (@current_user == @user) %></li>
    </header>
   </div>
 <div class="song-home">
   <header>
     <h3 class="right">projects</h3>
   </header>
-  <li class="left"><%= link_to "new song project", new_song_path %></li>
+  <li class="left"><%= (link_to "new song project", new_song_path) if (@current_user == @user) %></li>
   <% @user.songs.each do |song| %>
       <h4 class="left"><%= link_to song.name, song_path(song) %></h4>
   <% end %>
