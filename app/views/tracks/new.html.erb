@@ -4,7 +4,7 @@
     <div class="center">  
       <div class="song-info">
         <header>
-        <h3 class="song-name" data-user="<%= @current_user.username %>"><%= @song.name %></h3>
+          <h3 class="song-name" data-user="<%= @current_user.nil? ? "anon" : "#{@current_user.username}" %>" data-tracks="<%= @song.tracks.length %>"><%= @song.name %></h3>
         </header>
       </div>
 

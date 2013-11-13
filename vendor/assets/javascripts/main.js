@@ -6,7 +6,6 @@ var audioInput = null,
     inputPoint = null,
     audioRecorder = null;
 var rafID = null;
-var recIndex = 0;
 
 /* TODO:
 
@@ -31,8 +30,16 @@ function saveAudio() {
 // }
 
 function doneEncoding( blob ) {
-    Recorder.passToUploader( blob, $(".song-name").html() + "/" + $(".song-name").attr("data-user") + ".wav" /*+ (currentSongNameTracks.length + 1) + currentUser */);
-    recIndex++;
+    var songName = $(".song-name").html();
+    var numTracks = $(".song-name").attr("data-tracks");
+    if ( (numTracks + 1) < 10 ) {
+        var trackNum = "0" + (numTracks + 1);
+    } else {
+        trackNum = (numTracks + 1);
+    };
+    var username = $(".song-name").attr("data-user");
+
+    Recorder.passToUploader( blob, (songName + "/" + trackNum + username + ".wav") );
 }
 
 function toggleRecording( e ) {
