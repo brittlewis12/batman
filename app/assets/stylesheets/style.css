@@ -3,7 +3,7 @@ body {
   background-color: black;
   color: #141414;
   background-size: cover;
-  background-image: url('https://s3-us-west-2.amazonaws.com/beatcove/assets/images/beatcove.png');
+  background-image: url('https://s3-us-west-2.amazonaws.com/beatcove/assets/images/soundboard.png');
   background-repeat: no-repeat;
   overflow: scroll;
 }
