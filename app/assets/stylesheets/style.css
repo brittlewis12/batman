@@ -5,7 +5,11 @@ body {
   background-size: cover;
   background-image: url('/assets/soundboard.png');
   background-repeat: no-repeat;
-  overflow: hidden;
+  overflow: scroll;
+}
+
+::-webkit-scrollbar { 
+    display: none; 
 }
 
 .container {
