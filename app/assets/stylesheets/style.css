@@ -102,6 +102,8 @@ header h3 {
 
 h4 {
   margin: .5em auto 0 2em;
+  font-family: 'Josefin Sans', sans-serif; 
+  color:  #E8E8E8;
 }
 
 .standard {
@@ -129,7 +131,7 @@ DIV LAYOUT*/
   height: 200px;
   text-align: center;
   background-color: rgba(255, 255, 255, .3);
-  text-align: center;
+  text-align: right;
 }
 
 .user {
@@ -157,6 +159,25 @@ DIV LAYOUT*/
   height: 1%;
 }
 
+.all-collaborators {
+  width: 280px;
+  height: 200px;
+  overflow: scroll;
+  float: right;
+  position: absolute;
+  margin-left: 42%;
+  margin-top: -2em;
+  background-color: rgba(255, 255, 255, .1);
+  border-radius:  15%;
+}
+
+#controls {
+  float: left;
+  margin-left: 25%;
+  width: 300px;
+  height: 200px;
+}
+
 ::-webkit-scrollbar { 
     display: none; 
 }
@@ -178,14 +199,17 @@ img.avatar {
   width: 100px;
   border-radius: 50px;
   background-color: #470800;
+
+
+}
+
+.recording {
   -webkit-animation-name: redPulse;
   -webkit-animation-duration: 2s;
   -webkit-animation-iteration-count: infinite;
   -moz-animation-name: redPulse;
   -moz-animation-duration: 2s;
   -moz-animation-iteration-count: infinite;
-
-
 }
 
 .play-button {
