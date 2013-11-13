@@ -1,15 +1,15 @@
 <%= form_for @user do |f| %>
 
-    <%= f.label :username %>
+    <%= f.label :username, class: 'standard' %>
     <%= f.text_field :username %>
 
-    <%= f.label :email %>
+    <%= f.label :email, class: 'standard' %>
     <%= f.email_field :email %>
 
-    <%= f.label :password %>
+    <%= f.label :password, class: 'standard'%>
     <%= f.password_field :password %>
 
-    <%= f.label :password_confirmation %>
+    <%= f.label :password_confirmation, class: 'standard' %>
     <%= f.password_field :password_confirmation %>
 
     <%= f.submit %>
