@@ -50,23 +50,22 @@ BufferLoader.prototype.load = function() {
 }
 
 // end buffer loader class
-
-$(function(){
-
-
-  $('button').on('click', function(){
-    initLoader();
-  });
-  $('#play').on('click', function(){
-    initLoader();
-  });
+// This is the working function, but we haven't created the html element to bind click yet.
+// $(function(){
 
 
-})
+//   $('button').on('click', function(){
+//     initLoader();
+//   });
+//   $('#play').on('click', function(){
+//     initLoader();
+//   });
+
+
+// })
 
 var selectTracks = [
-      'https://dl.dropboxusercontent.com/s/yk6lk7veq0xroa7/05-ho-hey.mp3?dl=1&token_hash=AAG1FslNPq956S9dr3peWLn1w7YFmQ6vK90e092M-DumAA',
-      'https://dl.dropboxusercontent.com/s/jqijit6n4byl57v/Miley_Cyrus-Wrecking_Ball_rington.mp3?dl=1&token_hash=AAG3luOoVZO-v0BMjblCh8huimvOGsq7B0u0vjAiNmvLYg',
+      
     ];
 
 function initLoader() {
