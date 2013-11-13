@@ -6,6 +6,4 @@ class Track < ActiveRecord::Base
   belongs_to :user
   belongs_to :song
 
-  mount_uploader :track_file, TrackUploader
-
 end
