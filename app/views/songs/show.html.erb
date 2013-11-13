@@ -5,8 +5,8 @@
         <h3 class="song-name"><%= @song.name %></h3>
        </header>  
       <div id="controls">
-        <div class="record-button"></div>
-        <div class="play-button"></div> 
+<!--         <a id="record-button" class="record-button"></a> -->
+        <a id="play-button" class="play-button"></a> 
       </div> 
       <div id="progressbar"></div>
       <div class="all-collaborators">
@@ -21,10 +21,10 @@
     </div>
   </div>
   <% @song.tracks.each do |track| %>
-    <div class="track">
+    <div class="track"> 
       <h4 class="username"><%= track.user.username %></h4>
-      <img class="avatar" src="http://placekitten.com/60/60" alt="">
-      <button> ▶ </button>     
+      <img class="avatar" src="http://placekitten.com/60/60" alt="">  
+<input name="checkbox_name" id="<%= track.id %>" type="checkbox" data-checked="true" data-url="<%= track.url %>" checked>
       <div class="progress">
         <span class="percent"></span>
         <div class="bar" style= "width: 30%;"></div>
