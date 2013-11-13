@@ -1,9 +1,9 @@
 <%= form_tag session_path, :method => :post do %>
 
-  <%= label_tag :username %>
+  <%= label_tag :username, nil, class: 'standard' %>
   <%= text_field_tag :username %>
 
-  <%= label_tag :password %>
+  <%= label_tag :password, nil, class: 'standard' %>
   <%= password_field_tag :password %>
 
   <%= submit_tag "Login" %>
