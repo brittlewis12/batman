@@ -51,28 +51,32 @@ BufferLoader.prototype.load = function() {
 
 // end buffer loader class
 // This is the working function, but we haven't created the html element to bind click yet.
-// $(function(){
+$(function(){
 
 
-//   $('button').on('click', function(){
+//   $('#playButton').on('click', function(){
 //     initLoader();
 //   });
-//   $('#play').on('click', function(){
-//     initLoader();
-//   });
+  $('#play-button').on('click', function(){
+    initLoader();
+  });
 
+  $('input').on('click', function(){
+    if ($(this).attr('data-checked') === "true"){
+      $(this).attr('data-checked','false');
+    } else {
+      $(this).attr('data-checked','true');
+    }
+  });
+})
 
-// })
-
-var selectTracks = [
-      
-    ];
+window.selectTracks = [];
 
 function initLoader() {
   // Fix up prefixing
   window.AudioContext = window.AudioContext || window.webkitAudioContext;
   context = new AudioContext();
-  // check using jQuery if "checked". If "checked", selectTracks << track.
+  checkWhichTracksToPlay();
   bufferLoader = new BufferLoader(
     context,
     selectTracks,
@@ -92,4 +96,13 @@ function finishedLoading(bufferList) {
     source[i].connect(context.destination);
     source[i].start(i);
   };
+}
+
+function checkWhichTracksToPlay(){
+
+  $.each($('input'),function(index, value){
+    if( $(value).attr('data-checked') === "true" ){
+      selectTracks.push($(value).attr('data-url'));
+    };
+  });
 }
