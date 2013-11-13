@@ -87,10 +87,10 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
     var blob = blob;
     AWS.config.update({accessKeyId: "AKIAIWQL5BA6V37OGUQQ", secretAccessKey: "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"})
     AWS.config.region = "us-west-2";
-    var s3beatcove = new AWS.S3({ params: {Bucket: 'beatcove'} });
-    var req = s3beatcove.listObjects();
+    var beatcove = new AWS.S3({ params: {Bucket: 'beatcove'} });
     var params = {Key: filename, ContentType: blob.type, Body: blob};
-    s3beatcove.putObject(params, function(error, data){
+    console.log(params);
+    beatcove.putObject(params, function(error, data){
       if (error){
         alert("Something went wrong, and we weren't able to save your track. Please try again.");
       } else {
