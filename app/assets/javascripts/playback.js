@@ -72,7 +72,7 @@ function initLoader() {
   // Fix up prefixing
   window.AudioContext = window.AudioContext || window.webkitAudioContext;
   context = new AudioContext();
-
+  // check using jQuery if "checked". If "checked", selectTracks << track.
   bufferLoader = new BufferLoader(
     context,
     selectTracks,
