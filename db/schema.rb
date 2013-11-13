@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(version: 20131113162950) do
 
   create_table "tracks", force: true do |t|
     t.string   "name",                      null: false
+    t.string   "url",                       null: false
     t.boolean  "active",     default: true
     t.float    "volume",     default: 1.0
     t.float    "offset",     default: 0.0
@@ -43,7 +44,6 @@ ActiveRecord::Schema.define(version: 20131113162950) do
     t.integer  "user_id",                   null: false
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "track_file",                null: false
     t.string   "desc"
   end
 
