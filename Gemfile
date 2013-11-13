@@ -58,4 +58,4 @@ gem 'unf'
 # Use Pry for console
 gem 'pry-rails', group: [:development, :test]
 
-ruby "2.0.0"
+ruby '2.0.0'
