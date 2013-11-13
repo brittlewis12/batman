@@ -9,10 +9,16 @@ before_action :current_user
   end
 
   def create
+    require 'json'
+    binding.pry 
     @track = Track.new(track_params)
     @track.user_id = @current_user.id
     @track.song_id = params[:song_id]
     @track.save
+
+    response = {great_success: "IT WORKED"}.to_json
+
+    render json: response
   end
 
   def show
