@@ -88,7 +88,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
     AWS.config.update({accessKeyId: "AKIAIWQL5BA6V37OGUQQ", secretAccessKey: "***REMOVED***"})
     AWS.config.region = "us-west-2";
     var beatcove = new AWS.S3({ params: {Bucket: 'beatcove'} });
-    var params = {Key: filename, ContentType: blob.type, Body: blob};
+    var params = {ACL: "public-read", Key: filename, ContentType: blob.type, Body: blob};
     console.log(params);
     beatcove.putObject(params, function(error, data){
       if (error){
