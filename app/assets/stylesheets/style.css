@@ -79,6 +79,10 @@ a:hover {
   color: red;
 }
 
+h1 a:hover {
+  color: purple;
+}
+
 h1 {
   font-size: 2em;
   font-family: 'Josefin Sans', sans-serif;
