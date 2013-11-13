@@ -14,6 +14,7 @@ class SongsController < ApplicationController
     @song = Song.new(song_params)
     @song.creator_id = @current_user.id
     if @song.save
+      @song.users << @current_user
       redirect_to song_path(@song)
     else
       redirect_to #elsewhere #FIXME

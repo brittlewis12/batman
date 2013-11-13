@@ -9,7 +9,7 @@ class CollaboratorsController < ApplicationController
     @song = Song.find_by(id: params[:song_id])
     @user = User.find_by(username: params[:username])
 
-    if @song.users.include?(@user) && @song.users << @user
+    if !@song.users.include?(@user) && @song.users << @user
       redirect_to song_path(@song)
     else
       render :new
