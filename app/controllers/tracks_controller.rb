@@ -10,7 +10,6 @@ before_action :current_user
 
   def create
     require 'json'
-    binding.pry 
     @track = Track.new(track_params)
     @track.user_id = @current_user.id
     @track.song_id = params[:song_id]
