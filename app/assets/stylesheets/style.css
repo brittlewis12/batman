@@ -39,6 +39,11 @@ body {
 
 }
 
+/*DIRECTIONS*/
+.left {
+  margin-left: 6em;
+}
+
 /*TEXT */
 
 header {
@@ -373,5 +378,4 @@ input[type="submit"]:hover {
   -moz-animation-name: redPulse;
   -moz-animation-duration: 2s;
   -moz-animation-iteration-count: infinite;
-}
 }

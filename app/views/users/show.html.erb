@@ -1,16 +1,17 @@
 <div class="user">
    <header>
      <h3 class="right"><%= @user.username %></h3>  
-    <li><%= link_to "edit user", edit_user_path(@user) %></li>
+    <li class="left"><%= link_to "edit user", edit_user_path(@user) %></li>
    </header>
   </div>
 <div class="song-home">
   <header>
     <h3 class="right">projects</h3>
   </header>
+  <li class="left"><%= link_to "new song project", new_song_path %></li>
   <% @user.songs.each do |song| %>
   <div class="track">
-    <h4><%=link_to song.name, song_path(song) %> </h4>
+    <h4><%=link_to <%=song.name %>, song_path(song) %> </h4>
     <img class="avatar" src="http://placekitten.com/60/60" alt="">
     <button> ▶ </button>
     <div class="progress">

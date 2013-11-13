@@ -1,8 +1,16 @@
-<%= form_for @song do |f| %>
+<div class="song-home">
+  <div class="recorder">
+    <div class="center">  
+      <header>
+        <h3>New Song Project</h3>
+      </header>
+        <%= form_for @song do |f| %>
+            <%= f.label :title, class: "standard" %>
+            <%= f.text_field :name %>
+            <%= f.submit %>
+        <% end %>
+    </div>
+  </div>
+</div>
 
-    <%= f.label :name %>
-    <%= f.text_field :name %>
 
-    <%= f.submit %>
-
-<% end %>
