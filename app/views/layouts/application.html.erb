@@ -17,11 +17,14 @@
     </header>
     <nav>
       <ul>
-        <li><%= link_to "login", new_session_path %></li>
-        <li><%= link_to "sign up", new_user_path %></li>
-<!--         does sign out destroy session, too? Also, will only show if user is signed in -->
-        <li><%= link_to "sign out", session_path, method: :delete %></li>
-        <li>profile</li>
+        <% if logged_in? %>
+          <% current_user  %>
+          <li><%= link_to "profile", user_path(@current_user)%></li>
+          <li><%= link_to "sign out", session_path, method: :delete %></li>
+        <% else %>
+          <li><%= link_to "login", new_session_path %></li>
+          <li><%= link_to "sign up", new_user_path %></li>
+        <% end %>
         <li>about</li>
       </ul>
     </nav>
