@@ -1,14 +1,10 @@
-<% @song.tracks.each do |track| %>
-  <h5> <b> <%= track.name %> </b></h5>
-  <em> <%= track.desc %>  <%= track.url %> </em>
-<% end %>
+<%= @song.name %>
 
-
-<h2> collaborators: </h2>
-<% @song.users.each do |user| %>
-  <em> <%= user.username %> </em>
-  <br>
-<% end %>
+<ul> 
+  <% @song.tracks.each do |track| %>
+     <li> <b> <%= track.name %> </b> uploaded by <em> <%= track.user.username %> </em> </li>
+  <% end %>
+</ul>
 
 <%= link_to "add collaborators to this song", new_song_collaborator_path(@song) %>
 
