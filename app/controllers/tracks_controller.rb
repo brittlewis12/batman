@@ -11,6 +11,7 @@ before_action :current_user
   def create
     @track = Track.new(track_params)
     @track.user_id = @current_user.id
+    @track.song_id = params[:song_id]
     @track.save
   end
 
@@ -29,7 +30,7 @@ before_action :current_user
  private
 
   def track_params
-    params.require(:track).permit(:name, :desc, :url, :song_id)
+    params.require(:track).permit(:name, :desc, :url)
   end
 
   def set_track
