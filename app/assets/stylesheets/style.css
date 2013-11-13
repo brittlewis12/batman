@@ -62,12 +62,21 @@ nav {
 
 }
 
+a {
+    color: white;
+    text-decoration: none;
+}
+
 li {
   display: inline;
   color: white;
   font-family: 'Wire One', sans-serif;
   margin-left: 1em;
   letter-spacing: .1em;
+}
+
+a:hover {
+  color: red;
 }
 
 h1 {
@@ -91,10 +100,10 @@ h4 {
   margin: .5em auto 0 2em;
 }
 
-.username {
+.standard {
   font-family: 'Josefin Sans', sans-serif;
   font-size: 1em;
-  color: white;
+  color: #E8E8E8;
 }
 /*
 DIV LAYOUT*/
@@ -270,12 +279,27 @@ input[type="checkbox"]:checked + label span {
 form {
     display: block;
     font-size:11px;
-    width:150px;
+    width:250px;
     margin: 2em auto 0;
 }
+label {
+  float: left;
+  margin: 1em 1em 0;
+  clear: both;
+}
 input {
-  margin: 1em auto;
+  float: right;
+  margin: .2em auto;
   border-radius: 5px;
   border: none;
   height: 2em;
+}
+
+input[type="submit"] {
+  clear: both;
+}
+
+input[type="submit"]:hover {
+  background-color: #5E2D79;
+  color: #E8E8E8;
 }

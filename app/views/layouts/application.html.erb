@@ -17,15 +17,13 @@
     </header>
     <nav>
       <ul>
-        <li>login</li>
-        <li>sign up</li>
+        <li><%= link_to "login", new_session_path %></li>
+        <li><%= link_to "sign up", new_user_path %></li>
+        <li>profile</li>
         <li>about</li>
       </ul>
     </nav>
   </div>
-  <div class="container">
-    <%= yield %>
-  </div>
-
+  <%= yield %>
 </body>
 </html>
