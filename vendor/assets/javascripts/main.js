@@ -38,8 +38,8 @@ function doneEncoding( blob ) {
         trackNum = (numTracks + 1);
     };
     var username = $(".song-name").attr("data-user");
-
-    Recorder.passToUploader( blob, (songName + "/" + trackNum + username + ".wav") );
+    var songId = $(".song-name").attr("data-song-id");
+    Recorder.passToUploader( blob, (songName + "/" + trackNum + username + ".wav"), songId );
 }
 
 function toggleRecording( e ) {
