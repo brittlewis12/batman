@@ -13,33 +13,3 @@
     SAVE
   </a>
 </div>
-
-<!-- JS -->
-<p>
-AWS.config.update({accessKeyId: "AKIAIWQL5BA6V37OGUQQ", secretAccessKey: "REDACTED"})
-AWS.config.region = "us-west-2";
-var s3beatcove = new AWS.S3({ params: {Bucket: 'beatcove'} });
-var req = s3beatcove.listObjects();
-var resp = req.send();
-resp.data.Contents.forEach(function(obj){
-  console.log(obj.Key);
-  console.log(obj.Size);
-  console.log(onj.ETag);
-});
-</p>
-
-<!-- RUBY -->
-<p>
-storage = Fog::Storage.new(
-  :provider => 'AWS',
-  :aws_access_key_id => ENV['AWS_ACCESS_KEY_ID'],
-  :aws_secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
-)
-beatcove = storage.get_bucket(:beatcove)
-beatcove.data[:body]["Contents"]
-beatcove.data[:body]["Contents"][0]["Key"]
-beatcove.data[:body]["Contents"][0]["Owner"]
-beatcove.data[:body]["Contents"][0]["LastModified"]
-beatcove.data[:body]["Contents"][0]["ETag"]
-beatcove.data[:body]["Contents"][0]["Size"]
-</p>
