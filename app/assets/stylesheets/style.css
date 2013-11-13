@@ -80,7 +80,7 @@ li {
   letter-spacing: .1em;
 }
 
-a:hover {
+nav a:hover {
   color: red;
   -webkit-animation-name: redTextPulse;
   -webkit-animation-duration: 2s;
@@ -90,7 +90,17 @@ a:hover {
   -moz-animation-iteration-count: infinite;
 }
 
-h1 a:hover {
+li a:hover {
+  color: red;
+  -webkit-animation-name: redTextPulse;
+  -webkit-animation-duration: 2s;
+  -webkit-animation-iteration-count: infinite;
+  -moz-animation-name: redTextPulse;
+  -moz-animation-duration: 2s;
+  -moz-animation-iteration-count: infinite;
+}
+
+header h1 a:hover {
   color: purple;
   -webkit-animation-name: purpleTextPulse;
   -webkit-animation-duration: 2s;
