@@ -73,10 +73,10 @@ a {
 }
 
 li {
-  display: inline;
+  display: inline-block;
   color: white;
   font-family: 'Wire One', sans-serif;
-  margin-left: 1em;
+  margin: .3em auto .2em 1em;
   letter-spacing: .1em;
 }
 
@@ -279,27 +279,27 @@ img.avatar {
 }
 
 @-webkit-keyframes purpleTextPulse {
-  from { color: #1C1C1C;  }
+  from { color: #5D1885;  }
   50% { color: #853EAD;}
-  to { color: #1C1C1C;}
+  to { color: #5D1885;}
 }
 
 @-moz-keyframes purpleTextPulse {
-  from { color: #1C1C1C;  }
+  from { color: #5D1885;  }
   50% { color: #853EAD;}
-  to { color: #1C1C1C;}
+  to { color: #5D1885;}
 }
 
 @-webkit-keyframes redTextPulse {
-  from { color: #470800;  }
-  50% { color: #A30000;}
-  to { color: #470800;}
+  from { color: #730F02;  }
+  50% { color: red;}
+  to { color: #730F02;}
 }
 
 @-moz-keyframes redTextPulse {
-  from { color: #470800;  }
-  50% { color: #A30000;}
-  to { color: #470800;}
+  from { color: #730F02;  }
+  50% { color: red;}
+  to { color: #730F02;}
 }
 /*
 PLAYBACK*/
