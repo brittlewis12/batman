@@ -10,8 +10,6 @@
   </header>
   <li class="left"><%= link_to "new song project", new_song_path %></li>
   <% @user.songs.each do |song| %>
-    <div class="track">
-      <h4><%= link_to song.name, song_path(song) %></h4>
-    </div>
+      <h4 class="left"><%= link_to song.name, song_path(song) %></h4>
   <% end %>
  </div>
