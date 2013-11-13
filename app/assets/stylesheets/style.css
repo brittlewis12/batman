@@ -2,11 +2,16 @@ body {
   width: 100%;
   background-color: black;
   color: #141414;
-  background-size: cover 700px;
+  background-size: cover;
   background-image: url('/assets/soundboard.png');
   background-repeat: no-repeat;
   overflow: hidden;
+}
 
+.container {
+  position: relative;
+  top: 75px;
+  color: white;
 }
 
 .nav-bar {

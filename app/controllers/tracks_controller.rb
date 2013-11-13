@@ -1,10 +1,11 @@
 class TracksController < ApplicationController
 
-before_action :set_track, except: [:new, :create]
+before_action :current_user
+# before_action :set_track, except: [:new, :create]
 
   def new
-    @uploader = Track.new.track_file
-    @uploader.success_action_redirect = track_path(@uploader)
+    @song = Song.find(params[:song_id])
+    @track = Track.new
   end
 
   def create

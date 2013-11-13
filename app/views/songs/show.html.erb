@@ -1,17 +1,15 @@
-<h1> song title:<%= @song.name %> </h1>
+<h1> song title: <%= @song.name %> </h1>
 
 <% @song.tracks.each do |track| %>
-
   <h5> <b> <%= track.name %> </b></h5>
   <em> <%= track.desc %>  <%= track.url %> </em>
-
 <% end %>
 
 
 <h2> collaborators: </h2>
-  <% @song.users.each do |user| %>
-    <em> <%= user.username %> </em>
-    <br>
-  <% end %>
+<% @song.users.each do |user| %>
+  <em> <%= user.username %> </em>
+  <br>
+<% end %>
 
- <%= link_to "add collaborators to this song", new_song_collaborator_path(@song) %>
+<%= link_to "add collaborators to this song", new_song_collaborator_path(@song) %>
