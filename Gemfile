@@ -35,6 +35,8 @@ end
 # Use ActiveModel has_secure_password
 gem 'bcrypt-ruby', '~> 3.0.0'
 
+gem 'rails_12factor', group: :production
+
 # Use carrierwave_direct for S3 interaction
 gem 'carrierwave_direct', '~> 0.0.13'
 
