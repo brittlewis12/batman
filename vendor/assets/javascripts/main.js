@@ -31,7 +31,7 @@ function saveAudio() {
 // }
 
 function doneEncoding( blob ) {
-    Recorder.passToUploader( blob, $(".song-name").html() + "_" + $(".username").html() + ".wav" /*+ (currentSongNameTracks.length + 1) + currentUser */);
+    Recorder.passToUploader( blob, $(".song-name").html() + "/" + $(".song-name").attr("data-user") + ".wav" /*+ (currentSongNameTracks.length + 1) + currentUser */);
     recIndex++;
 }
 
@@ -39,6 +39,8 @@ function toggleRecording( e ) {
     if (e.classList.contains("recording")) {
         // stop recording
         audioRecorder.stop();
+        saveAudio();
+        console.log("SAVE WORKS");
         e.classList.remove("recording");
     } else {
         // start recording
@@ -47,6 +49,7 @@ function toggleRecording( e ) {
         e.classList.add("recording");
         audioRecorder.clear();
         audioRecorder.record();
+        $('')
     }
 }
 

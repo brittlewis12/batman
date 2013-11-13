@@ -1,31 +1,31 @@
-<%= @song.name %>
-
-<ul> 
-  <% @song.tracks.each do |track| %>
-     <li> <b> <%= track.name %> </b> uploaded by <em> <%= track.user.username %> </em> </li>
-  <% end %>
-</ul>
-
-<%= link_to "add collaborators to this song", new_song_collaborator_path(@song) %>
-
 <div class="song-home">
   <div class="recorder">
     <div class="center">  
       <header>
         <h3 class="song-name"><%= @song.name %></h3>
        </header>  
-      <div class="record-button"></div>
-      <div class="play-button"></div>  
+      <div id="controls">
+        <div class="record-button"></div>
+        <div class="play-button"></div> 
+      </div> 
+      <div id="progressbar"></div>
+      <div class="all-collaborators">
+        <% @song.users.each do |user| %>
+           <li><%= user.username %></li>
+        <% end %>
+        <%= link_to "add collaborators to this song", new_song_collaborator_path(@song), class: "" %>
+      </div>
     </div>
-    <div id="progressbar"></div>
   </div>
-  <div class="track">
-    <h4 class="username">mihran</h4>
-    <img class="avatar" src="http://placekitten.com/60/60" alt="">
-    <button> ▶ </button>     
-    <div class="progress">
-      <span class="percent"></span>
-      <div class="bar" style= "width: 30%;"></div>
+  <% @song.tracks.each do |track| %>
+    <div class="track">
+      <h4 class="username"><%= track.user.username %></h4>
+      <img class="avatar" src="http://placekitten.com/60/60" alt="">
+      <button> ▶ </button>     
+      <div class="progress">
+        <span class="percent"></span>
+        <div class="bar" style= "width: 30%;"></div>
+      </div>
     </div>
-  </div>
+  <% end %>
 </div>
