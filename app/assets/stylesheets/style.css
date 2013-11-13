@@ -39,6 +39,11 @@ body {
 
 }
 
+/*DIRECTIONS*/
+.left {
+  margin-left: 6em;
+}
+
 /*TEXT */
 
 header {
@@ -77,10 +82,22 @@ li {
 
 a:hover {
   color: red;
+  -webkit-animation-name: redTextPulse;
+  -webkit-animation-duration: 2s;
+  -webkit-animation-iteration-count: infinite;
+  -moz-animation-name: redTextPulse;
+  -moz-animation-duration: 2s;
+  -moz-animation-iteration-count: infinite;
 }
 
 h1 a:hover {
   color: purple;
+  -webkit-animation-name: purpleTextPulse;
+  -webkit-animation-duration: 2s;
+  -webkit-animation-iteration-count: infinite;
+  -moz-animation-name: purpleTextPulse;
+  -moz-animation-duration: 2s;
+  -moz-animation-iteration-count: infinite;
 }
 
 h1 {
@@ -160,13 +177,14 @@ DIV LAYOUT*/
 }
 
 .all-collaborators {
-  width: 280px;
-  height: 200px;
+  width: 230px;
+  height: 150px;
   overflow: scroll;
   float: right;
   position: absolute;
-  margin-left: 42%;
+  margin-left: 43%;
   margin-top: -2em;
+  padding: 1em;
   background-color: rgba(255, 255, 255, .1);
   border-radius:  15%;
 }
@@ -259,6 +277,30 @@ img.avatar {
   50% { background-color: #730F02; -moz-box-shadow: 0 0 20px #730F02; }
   to { background-color: #470800; -moz-box-shadow: 0 0 9px #1C1C1C; }
 }
+
+@-webkit-keyframes purpleTextPulse {
+  from { color: #1C1C1C;  }
+  50% { color: #853EAD;}
+  to { color: #1C1C1C;}
+}
+
+@-moz-keyframes purpleTextPulse {
+  from { color: #1C1C1C;  }
+  50% { color: #853EAD;}
+  to { color: #1C1C1C;}
+}
+
+@-webkit-keyframes redTextPulse {
+  from { color: #470800;  }
+  50% { color: #A30000;}
+  to { color: #470800;}
+}
+
+@-moz-keyframes redTextPulse {
+  from { color: #470800;  }
+  50% { color: #A30000;}
+  to { color: #470800;}
+}
 /*
 PLAYBACK*/
 
@@ -330,4 +372,10 @@ input[type="submit"] {
 input[type="submit"]:hover {
   background-color: #5E2D79;
   color: #E8E8E8;
+    -webkit-animation-name: redPulse;
+  -webkit-animation-duration: 2s;
+  -webkit-animation-iteration-count: infinite;
+  -moz-animation-name: redPulse;
+  -moz-animation-duration: 2s;
+  -moz-animation-iteration-count: infinite;
 }
