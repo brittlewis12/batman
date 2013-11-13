@@ -73,10 +73,10 @@ a {
 }
 
 li {
-  display: inline;
+  display: inline-block;
   color: white;
   font-family: 'Wire One', sans-serif;
-  margin-left: 1em;
+  margin: .3em auto .2em 1em;
   letter-spacing: .1em;
 }
 
