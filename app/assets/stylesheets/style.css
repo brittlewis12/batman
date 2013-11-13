@@ -160,13 +160,14 @@ DIV LAYOUT*/
 }
 
 .all-collaborators {
-  width: 280px;
-  height: 200px;
+  width: 230px;
+  height: 150px;
   overflow: scroll;
   float: right;
   position: absolute;
-  margin-left: 42%;
+  margin-left: 43%;
   margin-top: -2em;
+  padding: 1em;
   background-color: rgba(255, 255, 255, .1);
   border-radius:  15%;
 }
