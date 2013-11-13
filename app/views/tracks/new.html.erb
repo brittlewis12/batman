@@ -1,15 +1,17 @@
 <%= javascript_include_tag :record %>
+<div class="song-home">
+  <div class="recorder">
+    <div class="center">  
+      <div class="song-info">
+        <header>
+        <h3 class="song-name" data-user="<%= @current_user.username %>"><%= @song.name %></h3>
+        </header>
+      </div>
 
-<div class="song-info">
-  <h3 class="song-name"><%= @song.name %></h3>
-  <h3 class="username"><%= @current_user.username %></h3>
-</div>
-
-<div id="controls">
-  <a id="record" href="#" onclick="toggleRecording(this);">
-    RECORD
-  </a>
-  <a id="save" href="#" onclick="saveAudio();">
-    SAVE
-  </a>
+      <div id="controls">
+        <a id="record-button" class="record-button" onclick="toggleRecording(this);">
+        </a> 
+      </div>
+    </div>
+  </div>
 </div>
