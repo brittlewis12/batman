@@ -1,5 +1,3 @@
-<h1> song title: <%= @song.name %> </h1>
-
 <% @song.tracks.each do |track| %>
   <h5> <b> <%= track.name %> </b></h5>
   <em> <%= track.desc %>  <%= track.url %> </em>
@@ -13,3 +11,25 @@
 <% end %>
 
 <%= link_to "add collaborators to this song", new_song_collaborator_path(@song) %>
+
+<div class="song-home">
+  <div class="recorder">
+    <div class="center">  
+      <header>
+        <h3 class="song-name"><%= @song.name %></h3>
+       </header>  
+      <div class="record-button"></div>
+      <div class="play-button"></div>  
+    </div>
+    <div id="progressbar"></div>
+  </div>
+  <div class="track">
+    <h4 class="username">mihran</h4>
+    <img class="avatar" src="http://placekitten.com/60/60" alt="">
+    <button> ▶ </button>     
+    <div class="progress">
+      <span class="percent"></span>
+      <div class="bar" style= "width: 30%;"></div>
+    </div>
+  </div>
+</div>
