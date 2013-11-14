@@ -1,7 +1,6 @@
 class TracksController < ApplicationController
-
-before_action :current_user
-# before_action :set_track, except: [:new, :create]
+  before_action :current_user
+  # before_action :set_track, except: [:new, :create]
 
   def new
     @song = Song.find(params[:song_id])
@@ -9,21 +8,12 @@ before_action :current_user
   end
 
   def create
-    require 'json'
     @track = Track.new(track_params)
     @track.user_id = @current_user.id
     @track.song_id = params[:song_id]
     @track.save
-
     response = {great_success: "IT WORKED"}.to_json
-
     render json: response
-  end
-
-  def show
-  end
-
-  def update
   end
 
   def destroy
@@ -40,6 +30,4 @@ before_action :current_user
   def set_track
     @track = Track.find(params[:id])
   end
-
 end
-
