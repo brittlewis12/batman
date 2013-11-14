@@ -11,30 +11,29 @@ function saveAudio() {
     audioRecorder.exportWAV( doneEncoding );
 }
 
+// Matt Diamond function for play audio, which actually will do a force download.
 // function playAudio() {
 //     audioRecorder.exportWAV( doneRecording );
 // }
 
-// function doneRecording ( blob ) {
-//     Recorder.createBlobObject( blob );
-//     var track = $("audio");
-//     //track.src.start(); //some stuff that plays the unsaved audio blob in an audio tag
-// }
-
-function doneEncoding( blob ) {
+// Interacting with our DOM. Makes filename for track by taking in songName and userName and track number. Then calls 
+// passToUploader function and connects the blob to the filename.
+function doneEncoding(blob) {
     var songName = $(".song-name").html();
     var numTracks = $(".song-name").attr("data-tracks");
     if ((numTracks + 1) < 10) {
         var trackNum = "0" + (Number(numTracks) + 1);
     } else {
         trackNum = (Number(numTracks) + 1);
-    };
+    }
     var username = $(".song-name").attr("data-user");
     var songId = $(".song-name").attr("data-song-id");
     Recorder.passToUploader(blob, (songName + "/" + trackNum + username + ".wav"), songId);
 }
 
-function toggleRecording( e ) {
+// Click on/off for Record button. Starts and stops recording action. Saves on stop. Clears and records on start.
+// Adds recording class or takes away recording class (we call this onClick) to make the button glow while recording.
+function toggleRecording(e) {
     if (e.classList.contains("recording")) {
         // stop recording
         audioRecorder.stop();
@@ -52,7 +51,7 @@ function toggleRecording( e ) {
     }
 }
 
-function gotStream( stream ) {
+function gotStream(stream) {
     inputPoint = audioContext.createGain();
 
     // Create an AudioNode from the stream.
@@ -64,7 +63,7 @@ function gotStream( stream ) {
 
     zeroGain = audioContext.createGain();
     zeroGain.gain.value = 0.0;
-    inputPoint.connect( zeroGain );
+    inputPoint.connect(zeroGain);
     zeroGain.connect( audioContext.destination );
 }
 
@@ -81,4 +80,4 @@ function initAudio() {
         });
 }
 
-window.addEventListener( 'load', initAudio );
+window.addEventListener('load', initAudio);
