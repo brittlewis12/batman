@@ -7,12 +7,6 @@ var audioInput = null,
     audioRecorder = null;
 var rafID = null;
 
-/* TODO:
-
-- offer mono option
-- "Monitor input" switch
-*/
-
 function saveAudio() {
     audioRecorder.exportWAV( doneEncoding );
     // could get mono instead by saying
@@ -32,14 +26,14 @@ function saveAudio() {
 function doneEncoding( blob ) {
     var songName = $(".song-name").html();
     var numTracks = $(".song-name").attr("data-tracks");
-    if ( (numTracks + 1) < 10 ) {
+    if ((numTracks + 1) < 10) {
         var trackNum = "0" + (Number(numTracks) + 1);
     } else {
         trackNum = (Number(numTracks) + 1);
     };
     var username = $(".song-name").attr("data-user");
     var songId = $(".song-name").attr("data-song-id");
-    Recorder.passToUploader( blob, (songName + "/" + trackNum + username + ".wav"), songId );
+    Recorder.passToUploader(blob, (songName + "/" + trackNum + username + ".wav"), songId);
 }
 
 function toggleRecording( e ) {
@@ -83,7 +77,7 @@ function toggleMono() {
     audioInput.connect(inputPoint);
 }
 
-function gotStream(stream) {
+function gotStream( stream ) {
     inputPoint = audioContext.createGain();
 
     // Create an AudioNode from the stream.
@@ -111,8 +105,7 @@ function initAudio() {
 
     navigator.getUserMedia({audio:true}, gotStream, function(e) {
             alert('Error getting audio');
-            console.log(e);
         });
 }
 
-window.addEventListener('load', initAudio );
+window.addEventListener( 'load', initAudio );
