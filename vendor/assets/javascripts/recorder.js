@@ -113,22 +113,22 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
     });
   }
 
-  Recorder.createBlobObject = function(blob){
-    var url = (window.URL || window.webkitURL).createObjectURL(blob);
-    window.track = new Audio();
-    window.track.src = url;
-    document.body.appendChild(track);
-  }
+  // Recorder.createBlobObject = function(blob){
+  //   var url = (window.URL || window.webkitURL).createObjectURL(blob);
+  //   window.track = new Audio();
+  //   window.track.src = url;
+  //   document.body.appendChild(track);
+  // }
 
-  Recorder.forceDownload = function(blob, filename){
-    var url = (window.URL || window.webkitURL).createObjectURL(blob);
-    var link = window.document.createElement('a');
-    link.href = url;
-    link.download = filename || 'output.wav';
-    var click = document.createEvent("Event");
-    click.initEvent("click", true, true);
-    link.dispatchEvent(click);
-  }
+  // Recorder.forceDownload = function(blob, filename){
+  //   var url = (window.URL || window.webkitURL).createObjectURL(blob);
+  //   var link = window.document.createElement('a');
+  //   link.href = url;
+  //   link.download = filename || 'output.wav';
+  //   var click = document.createEvent("Event");
+  //   click.initEvent("click", true, true);
+  //   link.dispatchEvent(click);
+  // }
 
   window.Recorder = Recorder;
 
