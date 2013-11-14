@@ -4,7 +4,6 @@
     </header>
     <ul>
       <li class="left"><%= (link_to "edit user", edit_user_path(@user)) if (@current_user == @user) %></li>
-      <li class="left"><%= (link_to "delete user", user_path, method: :delete) if (@current_user == @user) %></li>
     </ul>
   </div>
 <div class="song-home">
