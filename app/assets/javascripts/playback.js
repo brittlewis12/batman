@@ -10,7 +10,6 @@ function BufferLoader(context, urlList, callback) {
     this.loadCount = 0;
 }
 
-
 function setPlayGlow() {
     // set class to playing until playback finishes
 }
@@ -55,7 +54,18 @@ BufferLoader.prototype.load = function() {
         this.loadBuffer(this.urlList[i], i);
 }
 
+makeBufferBars = function(){
+    $(".progress").attr('class', 'ui-progressbar');
+    $(".bar").attr('class', 'progress-label');
+}
+
+turnBackToProgressBars = function(){
+    $(".ui-progressbar").attr('class', 'progress');
+    $(".progress-label").attr('class', 'bar');
+}
+
 function initLoader() {
+    makeBufferBars();
     // Fix up prefixing
     window.selectTracks = [];
     window.AudioContext = window.AudioContext || window.webkitAudioContext;
@@ -66,11 +76,11 @@ function initLoader() {
         selectTracks,
         finishedLoading
     );
-
     bufferLoader.load();
 }
 
 function finishedLoading(bufferList) {
+    turnBackToProgressBars();
     // Create two sources and play them both together.
     var source = [];
     for (var i = 0; i < bufferList.length; i ++) {
