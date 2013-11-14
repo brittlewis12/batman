@@ -3,23 +3,27 @@
     <div class="center">  
       <header>
         <h3 class="song-name"><%= @song.name %></h3>
-       </header>  
+       </header>
+
       <div id="controls">
-        <!-- <a id="record-button" class="record-button"></a> -->
+        <!-- <%= "<a id='record-button' class='record-button'></a>" if @current_user = @song.creator_id %>-->
         <a id="play-button" class="play-button"></a> 
       </div>
+
       <div id="progressbar"></div>
+
       <div class="all-collaborators">
         <p class="standard">colaborators:</p>
         <ul>
-        <% @song.users.each do |user| %>
-           <li><%= link_to user.username, user_path(user) %></li>
-        <% end %>
+          <% @song.users.each do |user| %>
+            <li><%= link_to user.username, user_path(user) %></li>
+          <% end %>
         </ul>
         <li><%= link_to "new collaborator", new_song_collaborator_path(@song)%></li>
       </div>
     </div>
   </div>
+
   <% @song.tracks.each do |track| %>
     <div class="track">
       <h4 class="username"><%= track.user.username %></h4>
