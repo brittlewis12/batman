@@ -220,24 +220,19 @@ img.avatar {
 
 /*BUTTONS*/
 
-.plus-sign {
-background:blue;
-width:33px;
-height:100px;
-position:relative;
-margin-left:33px;
-}
-.plus-sign:before {
-background:blue;
-content:"";
-width:100px;
-height:33px;
-position:absolute;
-top:33px;
-left:-33px;
+.add-button {
+  cursor: pointer;
+  margin-left: .2em;
+  float: left;
+  font-size: 9em;
+  position:relative;
+  z-index: 100;
+  -webkit-animation: darkPurpleTextPulse 2s ease-in-out infinite alternate;
+  -moz-animation: darkPurpleTextPulse 2s ease-in-out infinite alternate;
 }
 
 .record-button {
+  cursor: pointer;
   margin: 2em 2em;
   display: inline-block;
   height: 100px;
@@ -258,6 +253,7 @@ left:-33px;
 }
 
 .play-button {
+  cursor: pointer;
   margin: 2em 2em;
   display: inline-block;
   width: 0; 
@@ -315,6 +311,18 @@ left:-33px;
   from { color: #5D1885;  }
   50% { color: #853EAD;}
   to { color: #5D1885;}
+}
+
+@-webkit-keyframes darkPurpleTextPulse {
+  from { color: #1C1C1C;  }
+  50% { color: #853EAD;}
+  to { color: #1C1C1C;}
+}
+
+@-moz-keyframes darkPurpleTextPulse {
+  from { color: #1C1C1C;  }
+  50% { color: #853EAD;}
+  to { color: #1C1C1C;}
 }
 
 @-webkit-keyframes redTextPulse {
