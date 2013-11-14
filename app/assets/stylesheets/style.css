@@ -465,7 +465,7 @@ input[type="submit"]:hover {
   margin: 0 auto;
   margin-top: 20px;
   position: relative;
-  border: none;
+  border: 5px solid white;
 }
 
 .progress-label {
