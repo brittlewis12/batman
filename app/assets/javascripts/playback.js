@@ -70,10 +70,9 @@ $(function(){
   });
 })
 
-window.selectTracks = [];
-
 function initLoader() {
   // Fix up prefixing
+  window.selectTracks = [];
   window.AudioContext = window.AudioContext || window.webkitAudioContext;
   context = new AudioContext();
   checkWhichTracksToPlay();
@@ -101,8 +100,15 @@ function finishedLoading(bufferList) {
 function checkWhichTracksToPlay(){
 
   $.each($('input'),function(index, value){
-    if( $(value).attr('data-checked') === "true" ){
-      selectTracks.push($(value).attr('data-url'));
-    };
+    var checked = $(value).attr('data-checked');
+    var url = $(value).attr('data-url');
+    var index = selectTracks.indexOf(url);
+    if( checked === "true" ){
+      selectTracks.push(url);
+    } else if( checked === "false" &&
+               index != -1
+              ) {
+      selectTracks.splice(index, 1);
+    }; 
   });
 }
