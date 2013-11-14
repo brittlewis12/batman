@@ -1,16 +1,17 @@
+<%= javascript_include_tag :buffer_animation %>
+<%= javascript_include_tag :playback %>
+
 <div class="song-home">
   <div class="recorder">
     <div class="center">  
       <header>
         <h3 class="song-name"><%= @song.name %></h3>
-       </header>
+      </header>
 
       <div id="controls">
         <%= (link_to "+", new_song_track_path(@song), class: "add-button") if @song.users.include?(@current_user) %>
         <a id="play-button" class="play-button"></a> 
       </div>
-
-      <div id="progressbar"></div>
 
       <div class="all-collaborators">
         <p class="standard">colaborators:</p>

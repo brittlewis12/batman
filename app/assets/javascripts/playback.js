@@ -57,11 +57,23 @@ BufferLoader.prototype.load = function() {
 makeBufferBars = function(){
     $(".progress").attr('class', 'ui-progressbar');
     $(".bar").attr('class', 'progress-label');
+    window.bar = $(".ui-progressbar");
+          lbl = $(".progress-label");
+    bar.progressbar({
+        value: 0,
+        change: function(event, ui) {
+        lbl.text( bar.progressbar("value") + "seconds" );
+    },
+    complete: function(event, ui) {
+    }
+  });
+    window.showBuffering();
 }
 
 turnBackToProgressBars = function(){
     $(".ui-progressbar").attr('class', 'progress');
     $(".progress-label").attr('class', 'bar');
+    removeBuffer();
 }
 
 function initLoader() {
@@ -80,14 +92,15 @@ function initLoader() {
 }
 
 function finishedLoading(bufferList) {
-    turnBackToProgressBars();
     // Create two sources and play them both together.
     var source = [];
     for (var i = 0; i < bufferList.length; i ++) {
         source[i] = context.createBufferSource();
         source[i].buffer = bufferList[i];
+        
         console.log("The duration of " + source[i].buffer + " is " + source[i].buffer.duration); // does this work?
-
+        turnBackToProgressBars();
+        
         source[i].connect(context.destination);
         source[i].start(i);
     };
