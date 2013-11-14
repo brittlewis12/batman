@@ -34,7 +34,7 @@ BufferLoader.prototype.loadBuffer = function(url, index) {
                 loader.bufferList[index] = buffer;
                 if (++loader.loadCount == loader.urlList.length)
                 loader.onload(loader.bufferList);
-                // loader.onload(setPlayGlow) // this waits until the tracks are loaded and then begin glowing
+                // loader.onload(setPlayGlow)
             },
             function(error) {
               console.error('decodeAudioData error', error);
