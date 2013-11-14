@@ -1,10 +1,18 @@
-<h1>add a collaborator by entering their username.<h2>
+<div class="song-home">
+  <div class="recorder">
+    <div class="center">  
+      <header>
+        <h3>New Collaborator to <%= @song.name %></h3>
+      </header>
 
-<%= form_tag song_collaborators_path(@song), method: :post do %>
+      <%= form_tag song_collaborators_path(@song), method: :post do %>
+        <%= label_tag :collaborator_username, nil, class: 'standard' %>
+        <%= text_field_tag :username %>
 
-    <%= label_tag :username %>
-    <%= text_field_tag :username %>
+        <%= submit_tag %>
+      <% end %>
+    </div>
+  </div>
+</div>
 
-    <%= submit_tag %>
 
-<% end %>
