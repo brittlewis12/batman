@@ -1,5 +1,4 @@
 class SongsController < ApplicationController
-
   before_action :current_user
   before_action :set_song, except: [:new, :create]
   before_action :authenticated!, except: :show
@@ -49,5 +48,4 @@ private
   def set_song
     @song = Song.find(params[:id])
   end
-  
 end
