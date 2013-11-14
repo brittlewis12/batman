@@ -1,5 +1,4 @@
 class UsersController < ApplicationController
-
   before_action :set_user, except: [:new, :create]
   before_action :authenticated!, :authorized!, except: [:new, :create, :show]
   before_action :current_user, only: [:show]
@@ -12,7 +11,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      session[:user_id] = @user.id # FIXME make this more secure, force login at creation
+      session[:user_id] = @user.id
       redirect_to user_path(@user)
     else
       render :new
@@ -36,7 +35,12 @@ class UsersController < ApplicationController
   end
 
   def destroy
-    @user.destroy
+    if @user.songs == 0
+      @user.destroy
+      redirect_to new_session_path
+    else
+     redirect_to user_path(@user), notice: "You can't delete yourself, because you have songs!"
+    end
   end
 
  private
@@ -54,5 +58,4 @@ class UsersController < ApplicationController
       redirect_to user_path(session[:user_id])
     end
   end
-
 end
