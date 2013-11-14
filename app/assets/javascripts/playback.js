@@ -71,6 +71,14 @@ function initLoader() {
 }
 
 function finishedLoading(bufferList) {
+    var bufferDurations = _.map(bufferList, function(buffer){
+        buffer.duration;
+    });
+    var longest = Math.max.apply(Math, bufferDurations);
+    var longestIndex = bufferDurations.indexOf(longest);
+    var longestBuffer = bufferList(longestIndex);
+
+
     // Create two sources and play them both together.
     var source = [];
     for (var i = 0; i < bufferList.length; i ++) {
