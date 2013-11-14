@@ -1,8 +1,11 @@
 <div class="user">
-   <header>
-     <h3 class="right"><%= @user.username %></h3>
-    <li class="left"><%= (link_to "edit user", edit_user_path(@user)) if (@current_user == @user) %></li>
-   </header>
+    <header>
+      <h3 class="right"><%= @user.username %></h3>
+    </header>
+    <ul>
+      <li class="left"><%= (link_to "edit user", edit_user_path(@user)) if (@current_user == @user) %></li>
+      <li class="left"><%= (link_to "delete user", user_path, method: :delete) if (@current_user == @user) %></li>
+    </ul>
   </div>
 <div class="song-home">
   <header>
@@ -17,7 +20,5 @@
   <%= content_tag :div, msg, class: "error-message" %>
 <% end -%>
 
-
-  <%= link_to "delete user", user_path, method: :delete %>
 
  </div>
