@@ -9,7 +9,7 @@ var rafID = null;
 
 function saveAudio() {
     audioRecorder.exportWAV( doneEncoding );
-    // could get mono instead by saying
+    // can get mono instead with:
     // audioRecorder.exportMonoWAV( doneEncoding );
 }
 
@@ -54,28 +54,28 @@ function toggleRecording( e ) {
     }
 }
 
-function convertToMono( input ) {
-    var splitter = audioContext.createChannelSplitter(2);
-    var merger = audioContext.createChannelMerger(2);
+// function convertToMono( input ) {
+//     var splitter = audioContext.createChannelSplitter(2);
+//     var merger = audioContext.createChannelMerger(2);
 
-    input.connect( splitter );
-    splitter.connect( merger, 0, 0 );
-    splitter.connect( merger, 0, 1 );
-    return merger;
-}
+//     input.connect( splitter );
+//     splitter.connect( merger, 0, 0 );
+//     splitter.connect( merger, 0, 1 );
+//     return merger;
+// }
 
-function toggleMono() {
-    if (audioInput != realAudioInput) {
-        audioInput.disconnect();
-        realAudioInput.disconnect();
-        audioInput = realAudioInput;
-    } else {
-        realAudioInput.disconnect();
-        audioInput = convertToMono( realAudioInput );
-    }
+// function toggleMono() {
+//     if (audioInput != realAudioInput) {
+//         audioInput.disconnect();
+//         realAudioInput.disconnect();
+//         audioInput = realAudioInput;
+//     } else {
+//         realAudioInput.disconnect();
+//         audioInput = convertToMono( realAudioInput );
+//     }
 
-    audioInput.connect(inputPoint);
-}
+//     audioInput.connect(inputPoint);
+// }
 
 function gotStream( stream ) {
     inputPoint = audioContext.createGain();
