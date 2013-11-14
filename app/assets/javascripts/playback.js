@@ -10,6 +10,11 @@ function BufferLoader(context, urlList, callback) {
     this.loadCount = 0;
 }
 
+
+function setPlayGlow() {
+    // set class to playing until playback finishes
+}
+
 BufferLoader.prototype.loadBuffer = function(url, index) {
     // Load buffer asynchronously
     var request = new XMLHttpRequest();
@@ -30,6 +35,7 @@ BufferLoader.prototype.loadBuffer = function(url, index) {
                 loader.bufferList[index] = buffer;
                 if (++loader.loadCount == loader.urlList.length)
                 loader.onload(loader.bufferList);
+                // loader.onload(setPlayGlow) // this waits until the tracks are loaded and then begin glowing
             },
             function(error) {
               console.error('decodeAudioData error', error);
@@ -70,6 +76,7 @@ function finishedLoading(bufferList) {
     for (var i = 0; i < bufferList.length; i ++) {
         source[i] = context.createBufferSource();
         source[i].buffer = bufferList[i];
+        console.log("The duration of " + source[i].buffer + " is " + source[i].buffer.duration); // does this work?
 
         source[i].connect(context.destination);
         source[i].start(i);
