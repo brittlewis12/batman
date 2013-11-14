@@ -36,7 +36,11 @@ class SongsController < ApplicationController
   end
 
   def destroy
-    @song.destroy
+    if @song.destroy
+      redirect_to user_path(@current_user)
+    else
+      render :edit
+    end
   end
 
 private
