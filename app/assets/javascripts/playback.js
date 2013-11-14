@@ -77,6 +77,7 @@ function finishedLoading(bufferList) {
     var longest = Math.max.apply(Math, bufferDurations);
     var longestIndex = bufferDurations.indexOf(longest);
     var longestBuffer = bufferList(longestIndex);
+    console.log(longestBuffer.duration);
 
 
     // Create two sources and play them both together.
