@@ -8,6 +8,7 @@
         <%= label_tag :collaborator_username, nil, class: 'standard' %>
         <%= text_field_tag :username %>
 
+<<<<<<< HEAD
         <%= submit_tag %>
       <% end %>
     </div>
@@ -15,3 +16,11 @@
 </div>
 
 
+=======
+<%= form_tag song_collaborators_path(@song), method: :post do %>
+    <%= label_tag :username %>
+    <%= text_field_tag :username %>
+
+    <%= submit_tag %>
+<% end %>
+>>>>>>> bb9b75653ac3cf634715bb67abbb237934c9c415
