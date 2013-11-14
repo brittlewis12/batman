@@ -6,7 +6,7 @@
        </header>
 
       <div id="controls">
-        <%= "<a id='record-button' class='record-button'></a>" if @current_user.id = @song.creator_id %>
+        <%= "<a id='record-button' class='record-button'></a>".html_safe if @current_user.id = @song.creator_id %>
         <a id="play-button" class="play-button"></a> 
       </div>
 
@@ -33,7 +33,7 @@
         <span class="percent"></span>
         <div class="bar" style= "width: 30%;"></div>
       </div>
-      <%= link_to "✕", song_track_path(@song, track), {method: :delete, confirm: 'Are you sure you want to TRASH THIS TRACK BRO? BRO, WHY?'} %>
+      <%= link_to "<img class='trash-can-button' src='https://s3-us-west-2.amazonaws.com/beatcove/assets/images/trashcan.png'>".html_safe, song_track_path(@song, track), {method: :delete, confirm: 'Are you sure you want to TRASH THIS TRACK BRO? BRO, WHY?'} %>
     </div>
   <% end %>
 </div>
