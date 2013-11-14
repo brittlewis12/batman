@@ -143,6 +143,10 @@ h4 {
 /*
 DIV LAYOUT*/
 
+.recorder.welcome {
+  padding: 4em 0 6em;
+}
+
 .song-home {
   margin: 0 auto;
   width: 100%;
@@ -213,24 +217,40 @@ DIV LAYOUT*/
 }
 
 #intro {
-  position: relative;
+  position: absolute;
   float: left;
   width: 100%;
-  margin-top: -2em;
-/*  background-color: rgba(255, 255, 255, .4);*/
+  text-align: center;
+  padding: 2.5em 0;
 }
 
 #about {
   position: relative;
+  padding: 3em 0;
   float: left;
   width: 100%;
-  height: 400px;
   margin-top: 3em;
   background-color: rgba(255, 255, 255, .2);
 }
 
 .paragraph-container {
   margin: 1em 0 1em 3em;
+}
+
+.triplets {
+  margin: 0 auto;
+  width: 900px;
+  text-align: center;
+}
+
+.svg {
+  display: inline-block;
+  margin: 0 3.7em auto 5em;
+
+}
+
+.triplets li {
+  margin: 2em 4em 2em 6em;
 }
 
 /*user image */
