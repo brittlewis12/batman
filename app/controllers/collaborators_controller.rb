@@ -1,10 +1,10 @@
 class CollaboratorsController < ApplicationController
   def new
-    @song = Song.find_by(id: params[:song_id])
+    @song = Song.find(params[:song_id])
   end
 
   def create
-    @song = Song.find_by(id: params[:song_id])
+    @song = Song.find(params[:song_id])
     @user = User.find_by(username: params[:username])
 
     if !@song.users.include?(@user) && @song.users << @user
