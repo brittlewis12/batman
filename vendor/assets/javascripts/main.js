@@ -9,8 +9,6 @@ var rafID = null;
 
 function saveAudio() {
     audioRecorder.exportWAV( doneEncoding );
-    // can get mono instead with:
-    // audioRecorder.exportMonoWAV( doneEncoding );
 }
 
 // function playAudio() {
@@ -54,29 +52,6 @@ function toggleRecording( e ) {
     }
 }
 
-// function convertToMono( input ) {
-//     var splitter = audioContext.createChannelSplitter(2);
-//     var merger = audioContext.createChannelMerger(2);
-
-//     input.connect( splitter );
-//     splitter.connect( merger, 0, 0 );
-//     splitter.connect( merger, 0, 1 );
-//     return merger;
-// }
-
-// function toggleMono() {
-//     if (audioInput != realAudioInput) {
-//         audioInput.disconnect();
-//         realAudioInput.disconnect();
-//         audioInput = realAudioInput;
-//     } else {
-//         realAudioInput.disconnect();
-//         audioInput = convertToMono( realAudioInput );
-//     }
-
-//     audioInput.connect(inputPoint);
-// }
-
 function gotStream( stream ) {
     inputPoint = audioContext.createGain();
 
@@ -84,8 +59,6 @@ function gotStream( stream ) {
     realAudioInput = audioContext.createMediaStreamSource(stream);
     audioInput = realAudioInput;
     audioInput.connect(inputPoint);
-
-//    audioInput = convertToMono( input );
 
     audioRecorder = new Recorder( inputPoint );
 
