@@ -16,7 +16,7 @@ class SongsController < ApplicationController
       @song.users << @current_user
       redirect_to song_path(@song)
     else
-      redirect_to #elsewhere #FIXME
+      render :new
     end
   end
 
