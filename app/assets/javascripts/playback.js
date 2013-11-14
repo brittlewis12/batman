@@ -53,10 +53,6 @@ BufferLoader.prototype.load = function() {
 // This is the working function, but we haven't created the html element to bind click yet.
 $(function(){
 
-
-//   $('#playButton').on('click', function(){
-//     initLoader();
-//   });
   $('#play-button').on('click', function(){
     initLoader();
   });
@@ -98,16 +94,13 @@ function finishedLoading(bufferList) {
 }
 
 function checkWhichTracksToPlay(){
-
   $.each($('input'),function(index, value){
     var checked = $(value).attr('data-checked');
     var url = $(value).attr('data-url');
     var index = selectTracks.indexOf(url);
     if( checked === "true" ){
       selectTracks.push(url);
-    } else if( checked === "false" &&
-               index != -1
-              ) {
+    } else if( checked === "false" && index != -1 ) {
       selectTracks.splice(index, 1);
     }; 
   });
