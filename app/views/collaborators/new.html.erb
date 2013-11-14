@@ -4,8 +4,7 @@
       <header>
         <h3>New Collaborator to <%= @song.name %></h3>
       </header>
-
-      <%= form_tag song_collaborators_path(@song), method: :post do %>
+        <%= form_tag song_collaborators_path(@song), method: :post do %>
         <%= label_tag :collaborator_username, nil, class: 'standard' %>
         <%= text_field_tag :username %>
 
