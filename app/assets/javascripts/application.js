@@ -15,3 +15,4 @@
 //= require turbolinks
 //= require playback
 //= require animation
+//= require underscore.min
