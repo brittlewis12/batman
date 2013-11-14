@@ -1,5 +1,13 @@
-<h1>edit page for <%= @user.username %></h1>
+<div class="song-home">
+  <div class="recorder">
+    <div class="center">  
+      <header>
+        <h3>Edit <%= @user.username %></h3>
+          <%= link_to "delete user", user_path(@user), method: :delete, class: 'standard' %>
+      </header>
+        <%= render 'new' %>
+    </div>
+  </div>
+</div>
 
-<%= render 'new' %>
 
-<%= link_to "delete user", user_path(@user), method: :delete %>
