@@ -2,7 +2,6 @@ class CollaboratorsController < ApplicationController
 
   def new
     @song = Song.find_by(id: params[:song_id])
-    render :new
   end
 
   def create

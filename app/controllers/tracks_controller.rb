@@ -21,7 +21,6 @@ before_action :current_user
   end
 
   def show
-    render :show
   end
 
   def update
