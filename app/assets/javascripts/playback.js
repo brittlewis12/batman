@@ -10,7 +10,7 @@ function BufferLoader(context, urlList, callback) {
     this.loadCount = 0;
 }
 
-function setPlayGlow() {
+function setPlayGlow(duration) {
     // set class to playing until playback finishes
 }
 
@@ -92,13 +92,13 @@ function initLoader() {
 }
 
 function finishedLoading(bufferList) {
-    var bufferDurations = _.map(bufferList, function(buffer){
-        buffer.duration;
-    });
-    var longest = Math.max.apply(Math, bufferDurations);
-    var longestIndex = bufferDurations.indexOf(longest);
-    var longestBuffer = bufferList(longestIndex);
-    console.log(longestBuffer.duration);
+    // var bufferDurations = _.map(bufferList, function(buffer){
+    //     buffer.duration;
+    // });
+    // var longest = Math.max.apply(Math, bufferDurations);
+    // var longestIndex = bufferDurations.indexOf(longest);
+    // var longestBuffer = bufferList[longestIndex];
+    // console.log(longestBuffer.duration);
 
 
     // Create two sources and play them both together.
