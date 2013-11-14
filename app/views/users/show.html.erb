@@ -12,4 +12,12 @@
   <% @user.songs.each do |song| %>
       <h4 class="left"><%= link_to song.name, song_path(song) %></h4>
   <% end %>
+
+<% flash.each do |name, msg| -%>
+  <%= content_tag :div, msg, class: "error-message" %>
+<% end -%>
+
+
+  <%= link_to "delete user", user_path, method: :delete %>
+
  </div>

@@ -1,5 +1,4 @@
 Beatcove::Application.routes.draw do
-
   root 'welcome#index'
 
   resource :session, only: [:new, :create, :destroy]
@@ -10,5 +9,4 @@ Beatcove::Application.routes.draw do
     resources :collaborators, only: [:new, :create]
     resources :tracks, only: [:new, :create, :destroy, :update, :show]
   end
-
 end
