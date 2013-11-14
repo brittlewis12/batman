@@ -7,6 +7,7 @@ body {
   background-repeat: no-repeat;
   overflow: scroll;
   line-height: 1.3em;
+  font-family: 'Wire One', sans-serif;
 }
 
 ::-webkit-scrollbar { 
@@ -462,11 +463,12 @@ input[type="submit"]:hover {
 .ui-progressbar {
   font-size: 12px;
   color: white;
-  width: 30%;
+  width: 80%;
   margin: 0 auto;
   margin-top: 20px;
   position: relative;
-  border: 5px solid white;
+  border: 1px solid white;
+  border-radius: 5px;
 }
 
 .progress-label {
