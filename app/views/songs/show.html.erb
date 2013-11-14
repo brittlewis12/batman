@@ -33,6 +33,7 @@
         <span class="percent"></span>
         <div class="bar" style= "width: 30%;"></div>
       </div>
+      <%= link_to "✕", song_track_path(@song, track), {method: :delete, confirm: 'Are you sure you want to TRASH THIS TRACK BRO? BRO, WHY?'} %>
     </div>
   <% end %>
 </div>
