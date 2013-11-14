@@ -450,7 +450,7 @@ input[type="submit"] {
 input[type="submit"]:hover {
   background-color: #5E2D79;
   color: #E8E8E8;
-    -webkit-animation-name: redPulse;
+  -webkit-animation-name: redPulse;
   -webkit-animation-duration: 2s;
   -webkit-animation-iteration-count: infinite;
   -moz-animation-name: redPulse;
@@ -466,7 +466,7 @@ input[type="submit"]:hover {
   margin: 0 auto;
   margin-top: 20px;
   position: relative;
-  border: none;
+  border: 5px solid white;
 }
 
 .progress-label {
