@@ -220,6 +220,23 @@ img.avatar {
 
 /*BUTTONS*/
 
+.plus-sign {
+background:blue;
+width:33px;
+height:100px;
+position:relative;
+margin-left:33px;
+}
+.plus-sign:before {
+background:blue;
+content:"";
+width:100px;
+height:33px;
+position:absolute;
+top:33px;
+left:-33px;
+}
+
 .record-button {
   margin: 2em 2em;
   display: inline-block;
