@@ -115,7 +115,6 @@ function finishedLoading(bufferList) {
         source[i] = context.createBufferSource();
         source[i].buffer = bufferList[i];
         
-        console.log("The duration of " + source[i].buffer + " is " + source[i].buffer.duration); // does this work?
         turnBackToProgressBars();
         
         source[i].connect(context.destination);
