@@ -141,6 +141,16 @@ h4 {
   font-size: 1em;
   color: #E8E8E8;
 }
+
+.error-message {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 2em;
+  color: red;
+  -webkit-animation: redTextPulse 1s ease-in-out infinite alternate;
+  -moz-animation: redTextPulse 1s ease-in-out infinite alternate;
+  margin-top: 1em;
+  margin-left: 7%;
+}
 /*
 DIV LAYOUT*/
 
