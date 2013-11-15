@@ -10,12 +10,13 @@ This is our second project for General Assembly's Web Development Immersive. It 
 
 #### technology
 ****
-* ruby 2.0.0
+* ruby 2.0.0 & rails 4.0.0
 * HTML5 Web Audio API
 * WebRTC
 * AWS:S3
 * AWS Javascript SDK
 * [Matt Diamond's Recorder](https://github.com/mattdiamond/Recorderjs)
+* Underscore.js
 * jQuery UI
 
 Note, WebRTC is not supported in Safari. Web Audio API is not supported by IE. 
