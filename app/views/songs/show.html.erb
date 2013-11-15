@@ -4,6 +4,7 @@
 <div class="song-home">
   <div class="recorder">
     <div class="center">  
+
       <header>
         <h3 class="song-name"><%= @song.name %></h3>
       </header>
@@ -21,6 +22,9 @@
           <% end %>
         </ul>
         <li><%= link_to "new collaborator", new_song_collaborator_path(@song)%></li>
+        <% flash.each do |name, msg| -%>
+          <%= content_tag :div, msg, class: "error-message small" %>
+        <% end -%>
       </div>
     </div>
   </div>
