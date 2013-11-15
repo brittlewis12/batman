@@ -516,3 +516,11 @@ input[type="submit"]:hover {
   letter-spacing: 1em;
 }
 
+span.github {
+  color: #853EAD;
+}
+
+span:hover {
+  -webkit-animation: purpleTextPulse 2s ease-in-out infinite alternate;
+  -moz-animation: purpleTextPulse 2s ease-in-out infinite alternate;
+}
