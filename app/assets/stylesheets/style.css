@@ -7,11 +7,14 @@ body {
   background-repeat: no-repeat;
   overflow: scroll;
   line-height: 1.3em;
-
 }
 
 ::-webkit-scrollbar { 
-    display: none; 
+  display: none; 
+}
+
+::-moz-scrollbar {
+  display: none;
 }
 
 .container {
@@ -31,22 +34,21 @@ body {
   right: 0;
   left: 0;
   z-index: 100;
-    
 }
 
 
 .wrapper {
   width: 100%;
   text-align: center;
-
 }
 
 /*DIRECTIONS*/
+
 .left {
   margin-left: 6em;
 }
 
-/*TEXT */
+/*TEXT*/
 
 header {
   margin-top: 1em;
@@ -155,8 +157,12 @@ h4 {
 .team {
   margin: 0 5.2em;
 }
-/*
-DIV LAYOUT*/
+
+.small {
+  font-size: 1em;
+}
+
+/*DIV LAYOUT*/
 
 .recorder.welcome {
   padding: 4em 0 6em;
@@ -269,7 +275,8 @@ DIV LAYOUT*/
   margin: 2em 4em 2em 6em;
 }
 
-/* image */
+/* images */
+
 img.avatar {
   margin: .3em 0 0 2em;
   float: left;
@@ -281,14 +288,12 @@ img.about-image {
   width: 200px;
   border-radius: 50%;
   margin: 2em;
-
 }
 
 img.about-image {
   width: 200px;
   border-radius: 50%;
   margin: 2em;
-
 }
 
 /*BUTTONS*/
@@ -323,8 +328,6 @@ img.about-image {
   width: 100px;
   border-radius: 50px;
   background-color: #470800;
-
-
 }
 
 .recording {
@@ -346,12 +349,6 @@ img.about-image {
   border-bottom: 50px solid transparent;
   border-left: 50px solid #260E34;
 }
-
-/*.play-button-playing {
-  -webkit-animation: glow 1s ease-in-out infinite alternate;
-  -moz-animation: glow 1s ease-in-out infinite alternate;
-}*/
-
 
 @-webkit-keyframes glow {
   0% { 
@@ -424,8 +421,8 @@ img.about-image {
   50% { color: red;}
   to { color: #730F02;}
 }
-/*
-PLAYBACK*/
+
+/*PLAYBACK*/
 
 .progress {
   float: left;
@@ -518,3 +515,4 @@ input[type="submit"]:hover {
   font-family: 'Josefin Sans', sans-serif;
   letter-spacing: 1em;
 }
+
