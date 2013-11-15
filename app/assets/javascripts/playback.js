@@ -11,7 +11,16 @@ function BufferLoader(context, urlList, callback) {
 }
 
 function setPlayGlow(duration) {
-    // set class to playing until playback finishes
+    var durationMilliseconds = Number(duration) * 1000;
+
+    $(".play-button").animate({"border-left-color": "#5C246E"}, 500, function(){
+        $(".add-button").attr("class", "pause-add-button");
+
+        setTimeout(function(){
+            $(".pause-add-button").attr("class", "add-button");
+            $(".play-button").animate({"border-left-color": "#260E34"}, 500);
+        }, durationMilliseconds);
+    });
 }
 
 BufferLoader.prototype.loadBuffer = function(url, index) {
@@ -34,7 +43,6 @@ BufferLoader.prototype.loadBuffer = function(url, index) {
                 loader.bufferList[index] = buffer;
                 if (++loader.loadCount == loader.urlList.length)
                 loader.onload(loader.bufferList);
-                // loader.onload(setPlayGlow)
             },
             function(error) {
               console.error('decodeAudioData error', error);
@@ -92,14 +100,14 @@ function initLoader() {
 }
 
 function finishedLoading(bufferList) {
-    // var bufferDurations = _.map(bufferList, function(buffer){
-    //     buffer.duration;
-    // });
-    // var longest = Math.max.apply(Math, bufferDurations);
-    // var longestIndex = bufferDurations.indexOf(longest);
-    // var longestBuffer = bufferList[longestIndex];
-    // console.log(longestBuffer.duration);
-
+    var bufferDurations = _.map(bufferList, function(buffer){
+        return buffer.duration;
+    });
+    var longest = Math.max.apply(Math, bufferDurations);
+    var longestIndex = bufferDurations.indexOf(longest);
+    var longestBuffer = bufferList[longestIndex];
+    var songLength = Math.round(longestBuffer.duration);
+    setPlayGlow(songLength);
 
     // Create two sources and play them both together.
     var source = [];

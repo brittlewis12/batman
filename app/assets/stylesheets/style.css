@@ -276,6 +276,17 @@ img.avatar {
   -moz-animation: darkPurpleTextPulse 2s ease-in-out infinite alternate;
 }
 
+.pause-add-button {
+  cursor: pointer;
+  margin: .4em 0 auto .2em;
+  float: left;
+  font-size: 9em;
+  color: #1C1C1C;
+  position:relative;
+  z-index: 100;
+  -webkit-animation-play-state: paused;
+}
+
 .record-button {
   cursor: pointer;
   margin: 2em 2em;
@@ -305,16 +316,13 @@ img.avatar {
   height: 0; 
   border-top: 50px solid transparent;
   border-bottom: 50px solid transparent;
-  border-left: 50px solid purple;
+  border-left: 50px solid #260E34;
+}
+
+/*.play-button-playing {
   -webkit-animation: glow 1s ease-in-out infinite alternate;
   -moz-animation: glow 1s ease-in-out infinite alternate;
-}
-
-.play-button:active {
-
-  -webkit-animation: none;
-  -moz-animation: none;
-}
+}*/
 
 
 @-webkit-keyframes glow {
