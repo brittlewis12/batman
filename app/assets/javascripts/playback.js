@@ -122,8 +122,8 @@ function finishedLoading(bufferList) {
     };
 }
 
-// Goes through DOM and sees if checkbox input is checked or not. If checked, it adds track url to bufferList. 
-// If track is unchecked, it isn't added to bufferList. If track is unchecked, but is in bufferList from previous play,
+// Goes through DOM and determines if each track is checked or not. If checked, it adds track url to bufferList. 
+// If track is unchecked, it is skipped. If track is unchecked, but is in bufferList from previous play,
 // it is taken out of the bufferList.
 function checkWhichTracksToPlay() {
     $.each($('input'),function(index, value) {
