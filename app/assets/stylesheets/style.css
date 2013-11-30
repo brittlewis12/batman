@@ -330,6 +330,14 @@ img.about-image {
   background-color: #470800;
 }
 
+.recordish {
+  cursor: pointer;
+  margin: 2em 2em;
+  display: inline-block;
+  height: 100px;
+  width: 100px;
+}
+
 .recording {
   -webkit-animation-name: redPulse;
   -webkit-animation-duration: 2s;
