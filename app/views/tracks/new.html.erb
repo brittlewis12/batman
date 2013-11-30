@@ -1,5 +1,9 @@
+<%= javascript_tag do %>
+  window._awsSecretKey = "<%= ENV['AWS_SECRET_ACCESS_KEY'] %>"
+  window._awsAccessId = "<%= ENV['AWS_ACCESS_KEY_ID'] %>"
+<% end %>
 <%= javascript_include_tag :record_assets %>
-
+ 
 <div class="song-home">
   <div class="recorder">
     <div class="center">  
