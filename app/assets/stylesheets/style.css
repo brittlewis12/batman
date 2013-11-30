@@ -265,9 +265,13 @@ h4 {
   text-align: center;
 }
 
+.triplets .standard {
+  margin: 1em 6em;
+}
+
 .svg {
   display: inline-block;
-  margin: 0 3.7em auto 5em;
+  margin: 0 5em;
 
 }
 
