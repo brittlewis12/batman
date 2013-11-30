@@ -19,7 +19,7 @@
       <ul>
         <% if logged_in? %>
           <% current_user  %>
-          <li><%= link_to "profile", user_path(@current_user) %></li>
+          <li><%= link_to "profile", user_path(current_user) %></li>
           <li><%= link_to "sign out", session_path, method: :delete %></li>
         <% else %>
           <li><%= link_to "login", new_session_path %></li>
