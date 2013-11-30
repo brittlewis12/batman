@@ -106,7 +106,7 @@ function finishedLoading(bufferList) {
     var longest = Math.max.apply(Math, bufferDurations);
     var longestIndex = bufferDurations.indexOf(longest);
     var longestBuffer = bufferList[longestIndex];
-    var songLength = Math.round(longestBuffer.duration);
+    window.songLength = Math.round(longestBuffer.duration);
     setPlayGlow(songLength);
 
     // Create two sources and play them both together.
