@@ -37,15 +37,6 @@ gem 'bcrypt-ruby', '~> 3.0.0'
 
 gem 'rails_12factor', group: :production
 
-# Use carrierwave_direct for S3 interaction
-gem 'carrierwave_direct', '~> 0.0.13'
-
-# Use fog for handling AWS implementation on back end
-gem 'fog'
-
-# Optional fog dependency unf for non-ASCII characters. May be unnecessary.
-gem 'unf'
-
 # Use unicorn as the app server
 # gem 'unicorn'
 
