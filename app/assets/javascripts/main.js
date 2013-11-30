@@ -11,24 +11,19 @@ function saveAudio() {
     audioRecorder.exportWAV( doneEncoding );
 }
 
-// Matt Diamond function for play audio, which actually will do a force download.
-// function playAudio() {
-//     audioRecorder.exportWAV( doneRecording );
-// }
-
-// Interacting with our DOM. Makes filename for track by taking in songName and userName and track number. Then calls 
-// passToUploader function and connects the blob to the filename.
+// Interacting with the DOM. Creates a filename for track by taking in songName and userName and track number. Then calls 
+// uploadToS3 function and connects the blob to the filename.
 function doneEncoding(blob) {
     var songName = $(".song-name").html();
     var numTracks = $(".song-name").attr("data-tracks");
-    if ((numTracks + 1) < 10) {
+    if ( (Number(numTracks) + 1) < 10 ) {
         var trackNum = "0" + (Number(numTracks) + 1);
     } else {
         trackNum = (Number(numTracks) + 1);
     }
     var username = $(".song-name").attr("data-user");
     var songId = $(".song-name").attr("data-song-id");
-    Recorder.passToUploader(blob, (songName + "/" + trackNum + username + ".wav"), songId);
+    Recorder.uploadToS3(blob, (songName + "/" + trackNum + username + ".wav"), songId);
 }
 
 // Click on/off for Record button. Starts and stops recording action. Saves on stop. Clears and records on start.

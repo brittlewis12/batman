@@ -80,39 +80,39 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
     }
 
     source.connect(this.node);
-    this.node.connect(this.context.destination);    //this should not be necessary
+    this.node.connect(this.context.destination);
   };
 
-  // beatcove created function. This takes place of force download. It takes a blob, sets it to our AWS key, and sends to S3.
-  Recorder.passToUploader = function(blob, filepath, songId) {
+  // this function instantiates a connection to our S3 bucket,
+  // takes the blob and filename, and sends it to S3.
+  Recorder.uploadToS3 = function(blob, filepath, songId) {
     var blob = blob;
-    AWS.config.update({accessKeyId: "AKIAIWQL5BA6V37OGUQQ", secretAccessKey: "REDACTED"});
+    AWS.config.update({accessKeyId: _awsAccessId, secretAccessKey: _awsSecretKey});
     AWS.config.region = "us-west-2";
 
-    // constructor function creates S3 connection object
-    var beatcove = new AWS.S3({ params: {Bucket: 'beatcove'}});
+    // instantiates an S3 connection to our beatcove bucket
+    var beatcove = new AWS.S3({ params: {Bucket: "beatcove"}});
     
-    // public-read unauthenticated viewers access to read/download content. 
-    // This allows anyone to listen to our wav files without making changes.
+    // sets the permissions of the file to be public but read-only, so anyone can listen to tracks. 
     var params = {ACL: "public-read", Key: filepath, ContentType: blob.type, Body: blob};
 
-    // putObject is a method from AWS javascript SDK that puts our object (beatcove) into the S3 bucket.
+    // AWS JavaScript SDK method that sends the audio file to our beatcove S3 bucket
     beatcove.putObject(params, function(error, data) {
-      // response from AMAZON
+      // callbacks based on response from AWS
       if (error) {
         alert("Something went wrong, and we weren't able to save your track. Please try again.");
       } else {
-        console.log("about to try to do some ajax trickery!!");
-        // persist in DATABASE (not on S3)
+        // persist the track info to our server's PostgreSQL database (not S3)
         $.ajax({
           url: "/songs/" + songId + "/tracks/",
           type: "POST",
           data: {track: {name: filepath, url:"https://beatcove.s3-us-west-2.amazonaws.com/" + filepath}},
           dataType: "json",
-          // response from DATABASE
+          // server response error callback function
           error: function() {
             alert("record was so bad, it could not persist in our DB");
           },
+          // server response success callback function
           success: function(data){
             console.log(data);
             window.location.replace("/songs/"+ songId);
@@ -121,17 +121,6 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
       } 
     });
   }
-
-  // Matt Diamond Code that is called on save. Forces user to download file. We replaced this with the passToUploader function.
-  // Recorder.forceDownload = function(blob, filename){
-  //   var url = (window.URL || window.webkitURL).createObjectURL(blob);
-  //   var link = window.document.createElement('a');
-  //   link.href = url;
-  //   link.download = filename || 'output.wav';
-  //   var click = document.createEvent("Event");
-  //   click.initEvent("click", true, true);
-  //   link.dispatchEvent(click);
-  // }
 
   window.Recorder = Recorder;
 
