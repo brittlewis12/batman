@@ -33,7 +33,19 @@
     <% unless track.removed == true %>
       <div class="track">
         <h4 class="username"><%= track.user.username %></h4>
-        <img class="avatar" src="http://placekitten.com/60/60" alt="">
+        <% founders = ["brittlewis12", "tea", "jorge"] %>
+        <% if founders.include?(track.user.username) %>
+          <% case track.user.username %>
+          <% when "brittlewis12" %>
+            <img class="avatar" src="https://s3-us-west-2.amazonaws.com/beatcove/assets/images/britt.jpg" alt="">
+          <% when "tea" %>
+            <img class="avatar" src="https://s3-us-west-2.amazonaws.com/beatcove/assets/images/tea.jpg" alt="">
+          <% when "jorge" %>
+            <img class="avatar" src="https://s3-us-west-2.amazonaws.com/beatcove/assets/images/mihran.jpg" alt="">
+          <% end %>
+        <% else %>
+          <img class="avatar" src="http://placekitten.com/60/60" alt="">
+        <% end %>
         <input name="checkbox_name" id="<%= track.id %>" type="checkbox" data-checked="true" data-url="<%= track.url %>" checked>
         <div class="progress">
           <span class="percent"></span>

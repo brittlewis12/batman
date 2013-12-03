@@ -284,6 +284,8 @@ h4 {
 
 img.avatar {
   margin: .3em 0 0 2em;
+  height: 60px;
+  width: 60px;
   float: left;
   clear: both;
   border-radius: 0 2em 0 2em;
