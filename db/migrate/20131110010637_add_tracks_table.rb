@@ -15,8 +15,6 @@ class AddTracksTable < ActiveRecord::Migration
   end
 end
 
-
 ## "active" and "volume" columns will allow us to persist basic mix information
 ## "volume" can be a float between 0 and 1
-
 ## "offset" and "loop" could be sequencing tools

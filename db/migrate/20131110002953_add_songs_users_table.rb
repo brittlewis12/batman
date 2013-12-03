@@ -6,6 +6,3 @@ class AddSongsUsersTable < ActiveRecord::Migration
     end
   end
 end
-
-
-## not using primary key on this join table (unnecessary)
