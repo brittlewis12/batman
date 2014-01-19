@@ -52,3 +52,7 @@ this API facillitates buffering audio sources, playback of those buffers, and a 
 * hello.teaho@gmail.com
 * <http://github.com/teabait>
 
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/brittlewis12/batman/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
