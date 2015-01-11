@@ -49,4 +49,4 @@ gem 'rails_12factor', group: :production
 # Use Pry for console
 gem 'pry-rails', group: [:development, :test]
 
-ruby '2.0.0'
+ruby '2.1.5'
